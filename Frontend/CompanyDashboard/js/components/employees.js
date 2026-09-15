@@ -46,7 +46,8 @@ const EmployeesComponent = {
     `;
 
     try {
-      this.data = await Api.get('/employees');
+      const res = await Api.get('/employees');
+      this.data = Array.isArray(res) ? res : [];
       this.filteredData = [...this.data];
       this.currentPage = 1;
       this.renderTable(container);
@@ -61,6 +62,8 @@ const EmployeesComponent = {
   },
 
   renderTable(container) {
+    if (!Array.isArray(this.data)) this.data = [];
+    if (!Array.isArray(this.filteredData)) this.filteredData = [];
     const departments = [...new Set(this.data.map(e => e.department))].filter(Boolean);
     const canAdd = Auth.hasPermission('employees', 'ADD');
 

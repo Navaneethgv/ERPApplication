@@ -18,6 +18,7 @@ public class EmployeesController : ControllerBase
         _employeeService = employeeService;
     }
 
+    [HttpGet]
     [HttpGet("get-all")]
     [Authorize(Policy = AppPolicies.Employees.View)]
     public IActionResult GetAll()

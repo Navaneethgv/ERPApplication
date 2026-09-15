@@ -47,6 +47,10 @@ const Api = {
         data = null;
       }
 
+      if (contentType && contentType.includes('text/html')) {
+        throw new Error(`API returned HTML instead of JSON. The requested endpoint '${endpoint}' may be missing or invalid.`);
+      }
+
       if (response.status === 401) {
         if (endpoint === '/auth/login') {
           const loginMsg = (data && data.message) ? data.message : 'Invalid username or password, or account is disabled.';

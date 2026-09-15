@@ -163,14 +163,29 @@ app.UseAuthorization();
 app.MapControllers();
 
 // Fallback to SPA index.html for non-API client routes
-if (Directory.Exists(frontendPath))
+app.MapFallback(async context =>
 {
-    var fileProvider = new PhysicalFileProvider(frontendPath);
-    app.MapFallbackToFile("index.html", new StaticFileOptions { FileProvider = fileProvider });
-}
-else
-{
-    app.MapFallbackToFile("index.html");
-}
+    // Unmatched API routes return 404 JSON instead of HTML
+    if (context.Request.Path.StartsWithSegments("/api"))
+    {
+        context.Response.StatusCode = StatusCodes.Status404NotFound;
+        context.Response.ContentType = "application/json";
+        await context.Response.WriteAsync("{\"message\":\"API endpoint not found.\"}");
+        return;
+    }
+
+    if (Directory.Exists(frontendPath))
+    {
+        var indexPath = Path.Combine(frontendPath, "index.html");
+        if (File.Exists(indexPath))
+        {
+            context.Response.ContentType = "text/html; charset=utf-8";
+            await context.Response.SendFileAsync(indexPath);
+            return;
+        }
+    }
+
+    context.Response.StatusCode = StatusCodes.Status404NotFound;
+});
 
 app.Run();
