@@ -69,7 +69,7 @@ const ProductsComponent = {
     const pageItems = this.filteredData.slice(start, start + this.pageSize);
 
     container.innerHTML = `
-      <div class="page-header-container">
+      <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
         <div>
           <h1 class="page-title">${isCustomer ? 'Product Catalog' : 'Product Inventory & Catalog'}</h1>
           <p class="page-subtitle">${isCustomer ? 'Browse items available for purchase' : 'Manage SKUs, unit pricing, cost prices, and stock threshold levels'}</p>
@@ -91,20 +91,20 @@ const ProductsComponent = {
       <div class="erp-card mb-3">
         <div class="erp-card-body p-3">
           <div class="row g-2 align-items-center">
-            <div class="col-md-6 col-lg-5">
+            <div class="col-12 col-md-5 col-lg-4">
               <div class="input-group input-group-sm">
                 <span class="input-group-text bg-light"><i class="bi bi-search"></i></span>
                 <input type="text" id="prod-search" class="form-control" placeholder="Search by SKU, product name, description..." oninput="ProductsComponent.filterList()">
               </div>
             </div>
-            <div class="col-md-3 col-lg-3">
+            <div class="col-6 col-md-3 col-lg-3">
               <select id="prod-cat-filter" class="form-select form-select-sm" onchange="ProductsComponent.filterList()">
                 <option value="">All Categories</option>
                 ${categories.map(c => `<option value="${c}">${c}</option>`).join('')}
               </select>
             </div>
             ${isStaff ? `
-              <div class="col-md-3 col-lg-2">
+              <div class="col-6 col-md-4 col-lg-3">
                 <select id="prod-stock-filter" class="form-select form-select-sm" onchange="ProductsComponent.filterList()">
                   <option value="">All Stock Levels</option>
                   <option value="low">Low Stock Only</option>
@@ -112,7 +112,7 @@ const ProductsComponent = {
                 </select>
               </div>
             ` : ''}
-            <div class="col-auto ms-auto text-muted small">
+            <div class="col-12 col-lg-auto ms-lg-auto text-muted small mt-1 mt-lg-0">
               Total: <strong id="prod-total-count">${this.filteredData.length}</strong> items
             </div>
           </div>
@@ -121,19 +121,19 @@ const ProductsComponent = {
 
       <!-- Products Table -->
       <div class="erp-card">
-        <div class="erp-table-wrapper">
+        <div class="erp-table-wrapper table-responsive">
           <table class="erp-table" id="products-table">
             <thead>
               <tr>
-                <th>SKU</th>
-                <th>Product Name & Info</th>
-                <th>Category</th>
-                <th>Selling Price</th>
-                ${isStaff ? `<th>Cost Price</th>` : ''}
-                <th>Stock Available</th>
-                ${isStaff ? `<th>Reorder Level</th>` : ''}
-                <th>Status</th>
-                ${isStaff ? `<th class="text-end">Actions</th>` : ''}
+                <th class="text-nowrap" style="min-width: 120px;">SKU</th>
+                <th style="min-width: 180px;">Product Name & Info</th>
+                <th class="text-nowrap" style="min-width: 120px;">Category</th>
+                <th class="text-nowrap" style="min-width: 110px;">Selling Price</th>
+                ${isStaff ? `<th class="text-nowrap" style="min-width: 110px;">Cost Price</th>` : ''}
+                <th class="text-nowrap" style="min-width: 110px;">Stock Available</th>
+                ${isStaff ? `<th class="text-nowrap" style="min-width: 110px;">Reorder Level</th>` : ''}
+                <th class="text-nowrap" style="min-width: 90px;">Status</th>
+                ${isStaff ? `<th class="text-end text-nowrap" style="min-width: 100px;">Actions</th>` : ''}
               </tr>
             </thead>
             <tbody id="products-table-body">
@@ -257,7 +257,7 @@ const ProductsComponent = {
   renderForm(container, prod) {
     const isEdit = !!prod;
     container.innerHTML = `
-      <div class="page-header-container">
+      <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
         <div>
           <h1 class="page-title">${isEdit ? 'Edit Product' : 'Add New Product'}</h1>
           <p class="page-subtitle">${isEdit ? `Update specifications for ${prod.name}` : 'Create a new product item in catalog'}</p>
@@ -270,20 +270,20 @@ const ProductsComponent = {
       </div>
 
       <div class="erp-card">
-        <div class="erp-card-body p-4">
+        <div class="erp-card-body p-3 p-sm-4">
           <form id="product-form" onsubmit="ProductsComponent.submitForm(event, ${isEdit ? prod.productId : 'null'})">
             <div class="form-section-title"><i class="bi bi-box-seam me-2"></i>Product Identification</div>
 
-            <div class="row mb-3">
-              <div class="col-md-4 mb-3 mb-md-0">
+            <div class="row g-3 mb-3">
+              <div class="col-12 col-md-4">
                 <label class="form-label" for="prod-sku">Product SKU Code <span class="required-asterisk">*</span></label>
                 <input type="text" id="prod-sku" class="form-control font-monospace" value="${prod?.sku || ''}" placeholder="e.g. PROD-LAP-009" required>
               </div>
-              <div class="col-md-5 mb-3 mb-md-0">
+              <div class="col-12 col-md-5">
                 <label class="form-label" for="prod-name">Product Name <span class="required-asterisk">*</span></label>
                 <input type="text" id="prod-name" class="form-control" value="${prod?.name || ''}" placeholder="e.g. Ultra Gaming Monitor 27\"" required>
               </div>
-              <div class="col-md-3">
+              <div class="col-12 col-md-3">
                 <label class="form-label" for="prod-category">Category <span class="required-asterisk">*</span></label>
                 <select id="prod-category" class="form-select" required>
                   <option value="">Select Category</option>
@@ -297,7 +297,7 @@ const ProductsComponent = {
               </div>
             </div>
 
-            <div class="row mb-4">
+            <div class="row g-3 mb-4">
               <div class="col-12">
                 <label class="form-label" for="prod-desc">Description</label>
                 <textarea id="prod-desc" class="form-control" rows="2" placeholder="Product specifications, model details, etc.">${prod?.description || ''}</textarea>
@@ -306,33 +306,33 @@ const ProductsComponent = {
 
             <div class="form-section-title"><i class="bi bi-tag me-2"></i>Pricing & Inventory Controls</div>
 
-            <div class="row mb-3">
-              <div class="col-md-4 mb-3 mb-md-0">
+            <div class="row g-3 mb-3">
+              <div class="col-12 col-md-4">
                 <label class="form-label" for="prod-unit-price">Selling Unit Price (₹) <span class="required-asterisk">*</span></label>
                 <input type="number" step="0.01" min="0.01" id="prod-unit-price" class="form-control" value="${prod?.unitPrice || ''}" placeholder="0.00" required>
               </div>
-              <div class="col-md-4 mb-3 mb-md-0">
+              <div class="col-12 col-md-4">
                 <label class="form-label" for="prod-cost-price">Cost / Purchase Price (₹) <span class="required-asterisk">*</span></label>
                 <input type="number" step="0.01" min="0" id="prod-cost-price" class="form-control" value="${prod?.costPrice || ''}" placeholder="0.00" required>
               </div>
-              <div class="col-md-4">
+              <div class="col-12 col-md-4">
                 <label class="form-label" for="prod-uom">Unit of Measure <span class="required-asterisk">*</span></label>
                 <input type="text" id="prod-uom" class="form-control" value="${prod?.unitOfMeasure || 'Unit'}" required>
               </div>
             </div>
 
-            <div class="row mb-4">
-              <div class="col-md-4 mb-3 mb-md-0">
+            <div class="row g-3 mb-4">
+              <div class="col-12 col-md-4">
                 <label class="form-label" for="prod-reorder">Low Stock Alert Level <span class="required-asterisk">*</span></label>
                 <input type="number" min="0" id="prod-reorder" class="form-control" value="${prod?.reorderLevel || 10}" required>
               </div>
               ${!isEdit ? `
-                <div class="col-md-4 mb-3 mb-md-0">
+                <div class="col-12 col-md-4">
                   <label class="form-label" for="prod-initial-stock">Initial Stock On Hand</label>
                   <input type="number" min="0" id="prod-initial-stock" class="form-control" value="0">
                 </div>
               ` : ''}
-              <div class="col-md-4">
+              <div class="col-12 col-md-4">
                 <label class="form-label" for="prod-status">Catalog Status <span class="required-asterisk">*</span></label>
                 <select id="prod-status" class="form-select" required>
                   <option value="Active" ${prod?.status === 'Active' ? 'selected' : ''}>Active</option>
@@ -341,7 +341,7 @@ const ProductsComponent = {
               </div>
             </div>
 
-            <div class="d-flex justify-content-end gap-2 border-top pt-3">
+            <div class="d-flex flex-column-reverse flex-sm-row justify-content-end gap-2 border-top pt-3">
               <a href="#products" class="btn btn-erp-secondary">Cancel</a>
               <button type="submit" class="btn btn-erp-primary" id="btn-save-prod">
                 <i class="bi bi-check2 me-1"></i>${isEdit ? 'Save Changes' : 'Create Product'}

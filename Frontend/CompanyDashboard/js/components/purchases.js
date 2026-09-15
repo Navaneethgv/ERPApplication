@@ -56,7 +56,7 @@ const PurchasesComponent = {
     const canAdd = Auth.hasPermission('purchases', 'ADD');
 
     container.innerHTML = `
-      <div class="page-header-container">
+      <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
         <div>
           <h1 class="page-title">Purchase Orders & Procurement</h1>
           <p class="page-subtitle">Procurement lifecycle, vendor purchase orders, and receiving workflows</p>
@@ -72,8 +72,8 @@ const PurchasesComponent = {
 
       <!-- KPI Summary -->
       <div class="row g-3 mb-4">
-        <div class="col-sm-6 col-xl-4">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-4">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Total Procurement Spend</span>
               <div class="kpi-icon-box icon-amber"><i class="bi bi-cash-coin"></i></div>
@@ -83,8 +83,8 @@ const PurchasesComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-4">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-4">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Received & In Stock</span>
               <div class="kpi-icon-box icon-green"><i class="bi bi-check2-all"></i></div>
@@ -94,8 +94,8 @@ const PurchasesComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-4">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-4">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Pending Delivery</span>
               <div class="kpi-icon-box icon-blue"><i class="bi bi-truck"></i></div>
@@ -110,13 +110,13 @@ const PurchasesComponent = {
       <div class="erp-card mb-3">
         <div class="erp-card-body p-3">
           <div class="row g-2 align-items-center">
-            <div class="col-md-6 col-lg-5">
+            <div class="col-12 col-md-5 col-lg-4">
               <div class="input-group input-group-sm">
                 <span class="input-group-text bg-light"><i class="bi bi-search"></i></span>
                 <input type="text" id="po-search" class="form-control" placeholder="Search by PO #, supplier name, notes..." oninput="PurchasesComponent.filterList()">
               </div>
             </div>
-            <div class="col-md-3 col-lg-3">
+            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
               <select id="po-status-filter" class="form-select form-select-sm" onchange="PurchasesComponent.filterList()">
                 <option value="">All Statuses</option>
                 <option value="Ordered">Ordered (Pending)</option>
@@ -125,7 +125,7 @@ const PurchasesComponent = {
                 <option value="Cancelled">Cancelled</option>
               </select>
             </div>
-            <div class="col-auto ms-auto text-muted small">
+            <div class="col-12 col-sm-auto ms-sm-auto text-muted small text-sm-end mt-2 mt-sm-0">
               Total: <strong id="po-total-count">${this.filteredData.length}</strong> purchase orders
             </div>
           </div>
@@ -134,8 +134,8 @@ const PurchasesComponent = {
 
       <!-- Table -->
       <div class="erp-card">
-        <div class="erp-table-wrapper">
-          <table class="erp-table" id="purchases-table">
+        <div class="table-responsive erp-table-wrapper">
+          <table class="erp-table align-middle" id="purchases-table" style="min-width: 660px;">
             <thead>
               <tr>
                 <th>PO Number</th>
@@ -267,7 +267,7 @@ const PurchasesComponent = {
       const nextWeek = new Date(Date.now() + 7 * 86400000).toISOString().slice(0, 10);
 
       container.innerHTML = `
-        <div class="page-header-container">
+        <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
           <div>
             <h1 class="page-title">Create Purchase Order</h1>
             <p class="page-subtitle">Order inventory items from verified suppliers</p>
@@ -281,11 +281,11 @@ const PurchasesComponent = {
 
         <form id="create-po-form" onsubmit="PurchasesComponent.submitCreate(event)">
           <div class="erp-card mb-4">
-            <div class="erp-card-body p-4">
+            <div class="erp-card-body p-3 p-md-4">
               <div class="form-section-title"><i class="bi bi-file-earmark-text me-2"></i>Order & Supplier Information</div>
 
-              <div class="row mb-3">
-                <div class="col-md-6 mb-3 mb-md-0">
+              <div class="row g-3 mb-3">
+                <div class="col-12 col-md-6">
                   <label class="form-label" for="po-supplier">Supplier <span class="required-asterisk">*</span></label>
                   <select id="po-supplier" class="form-select" required>
                     <option value="">Select Supplier</option>
@@ -294,17 +294,17 @@ const PurchasesComponent = {
                     `).join('')}
                   </select>
                 </div>
-                <div class="col-md-3 mb-3 mb-md-0">
+                <div class="col-12 col-sm-6 col-md-3">
                   <label class="form-label" for="po-date">Purchase Date <span class="required-asterisk">*</span></label>
                   <input type="date" id="po-date" class="form-control" value="${today}" required>
                 </div>
-                <div class="col-md-3">
+                <div class="col-12 col-sm-6 col-md-3">
                   <label class="form-label" for="po-delivery">Expected Delivery <span class="required-asterisk">*</span></label>
                   <input type="date" id="po-delivery" class="form-control" value="${nextWeek}" required>
                 </div>
               </div>
 
-              <div class="row mb-2">
+              <div class="row g-3 mb-2">
                 <div class="col-12">
                   <label class="form-label" for="po-notes">Order Notes / Terms</label>
                   <input type="text" id="po-notes" class="form-control" placeholder="Special delivery instructions, freight notes...">
@@ -315,15 +315,15 @@ const PurchasesComponent = {
 
           <!-- Dynamic Item Lines -->
           <div class="erp-card mb-4">
-            <div class="erp-card-header">
-              <h6 class="erp-card-title"><i class="bi bi-box-seam me-2"></i>Purchase Order Items</h6>
+            <div class="erp-card-header d-flex flex-wrap align-items-center justify-content-between gap-2">
+              <h6 class="erp-card-title mb-0"><i class="bi bi-box-seam me-2"></i>Purchase Order Items</h6>
               <button type="button" class="btn btn-outline-primary btn-sm" onclick="PurchasesComponent.addItemRow()">
                 <i class="bi bi-plus-lg me-1"></i>Add Item Line
               </button>
             </div>
             <div class="erp-card-body p-0">
-              <div class="erp-table-wrapper">
-                <table class="erp-table mb-0" id="po-items-table">
+              <div class="table-responsive erp-table-wrapper">
+                <table class="erp-table align-middle mb-0" id="po-items-table" style="min-width: 620px;">
                   <thead>
                     <tr>
                       <th style="width: 45%;">Product <span class="required-asterisk">*</span></th>
@@ -347,7 +347,7 @@ const PurchasesComponent = {
             </div>
           </div>
 
-          <div class="d-flex justify-content-end gap-2">
+          <div class="d-flex flex-column-reverse flex-sm-row justify-content-end gap-2">
             <a href="#purchases" class="btn btn-erp-secondary">Cancel</a>
             <button type="submit" class="btn btn-erp-primary" id="btn-save-po">
               <i class="bi bi-check2-circle me-1"></i>Submit Purchase Order
@@ -505,13 +505,13 @@ const PurchasesComponent = {
     try {
       const po = await Api.get(`/purchases/${id}`);
       container.innerHTML = `
-        <div class="page-header-container">
+        <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
           <div>
             <h1 class="page-title">Purchase Order ${po.purchaseNumber}</h1>
             <p class="page-subtitle">Created by ${po.createdBy} on ${App.formatDate(po.createdAt)}</p>
           </div>
-          <div>
-            <a href="#purchases" class="btn btn-erp-secondary btn-sm me-2">
+          <div class="d-flex flex-wrap gap-2">
+            <a href="#purchases" class="btn btn-erp-secondary btn-sm">
               <i class="bi bi-arrow-left me-1"></i>Back
             </a>
             ${(po.status === 'Ordered' || po.status === 'Draft') ? `
@@ -523,14 +523,14 @@ const PurchasesComponent = {
         </div>
 
         <div class="row g-3 mb-4">
-          <div class="col-lg-8">
+          <div class="col-12 col-lg-8">
             <div class="erp-card mb-3">
-              <div class="erp-card-header">
-                <h6 class="erp-card-title"><i class="bi bi-receipt me-2"></i>Order Line Items</h6>
+              <div class="erp-card-header d-flex flex-wrap align-items-center justify-content-between gap-2">
+                <h6 class="erp-card-title mb-0"><i class="bi bi-receipt me-2"></i>Order Line Items</h6>
                 <span class="badge-status badge-${po.status.toLowerCase()}">${po.status}</span>
               </div>
-              <div class="erp-table-wrapper">
-                <table class="erp-table">
+              <div class="table-responsive erp-table-wrapper">
+                <table class="erp-table align-middle" style="min-width: 560px;">
                   <thead>
                     <tr>
                       <th>SKU</th>
@@ -571,7 +571,7 @@ const PurchasesComponent = {
             ` : ''}
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-12 col-lg-4">
             <div class="erp-card">
               <div class="erp-card-header">
                 <h6 class="erp-card-title"><i class="bi bi-truck me-2"></i>Vendor Summary</h6>

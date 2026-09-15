@@ -31,7 +31,7 @@ const SecurityComponent = {
       </div>
 
       <!-- Navigation Tabs -->
-      <ul class="nav nav-pills custom-nav-pills mb-4" id="securityTabs">
+      <ul class="nav nav-pills custom-nav-pills flex-nowrap overflow-x-auto text-nowrap pb-2 mb-4" id="securityTabs">
         <li class="nav-item">
           <button class="nav-link ${this.currentTab === 'policy' ? 'active' : ''}" onclick="SecurityComponent.switchTab('policy')">
             <i class="bi bi-key-fill me-2"></i>Password Policy
@@ -115,16 +115,16 @@ const SecurityComponent = {
     mount.innerHTML = `
       <div class="row g-4">
         <!-- Settings Form -->
-        <div class="col-lg-7">
+        <div class="col-12 col-lg-7">
           <div class="card border-0 shadow-sm">
-            <div class="card-header bg-white py-3 border-bottom d-flex justify-content-between align-items-center">
+            <div class="card-header bg-white py-3 border-bottom d-flex flex-wrap justify-content-between align-items-center gap-2">
               <h5 class="card-title mb-0 fw-bold"><i class="bi bi-shield-check text-primary me-2"></i>Password Security Configuration</h5>
               <span class="badge bg-secondary-subtle text-secondary small">Last updated: ${App.formatDateTime(p.updatedAt)}</span>
             </div>
-            <div class="card-body p-4">
+            <div class="card-body p-3 p-md-4">
               <form id="password-policy-form" onsubmit="SecurityComponent.savePasswordPolicy(event)">
                 <div class="row g-3">
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <label class="form-label fw-semibold" for="pol-min-len">Minimum Length</label>
                     <div class="input-group">
                       <span class="input-group-text"><i class="bi bi-123"></i></span>
@@ -133,7 +133,7 @@ const SecurityComponent = {
                     <div class="form-text small">Recommended: At least 8 characters.</div>
                   </div>
 
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <label class="form-label fw-semibold" for="pol-expiry">Password Expiry (Days)</label>
                     <div class="input-group">
                       <span class="input-group-text"><i class="bi bi-calendar-event"></i></span>
@@ -142,7 +142,7 @@ const SecurityComponent = {
                     <div class="form-text small">Enter 0 to disable periodic expiry.</div>
                   </div>
 
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <label class="form-label fw-semibold" for="pol-history">Password History Count</label>
                     <div class="input-group">
                       <span class="input-group-text"><i class="bi bi-clock-history"></i></span>
@@ -151,7 +151,7 @@ const SecurityComponent = {
                     <div class="form-text small">Number of previous passwords user cannot reuse.</div>
                   </div>
 
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <label class="form-label fw-semibold" for="pol-attempts">Max Failed Attempts (Lockout)</label>
                     <div class="input-group">
                       <span class="input-group-text"><i class="bi bi-person-x-fill text-danger"></i></span>
@@ -160,7 +160,7 @@ const SecurityComponent = {
                     <div class="form-text small">Failed logins before account is locked.</div>
                   </div>
 
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <label class="form-label fw-semibold" for="pol-lockout-min">Lockout Duration (Minutes)</label>
                     <div class="input-group">
                       <span class="input-group-text"><i class="bi bi-stopwatch"></i></span>
@@ -215,7 +215,7 @@ const SecurityComponent = {
                   </div>
                 </div>
 
-                <div class="d-flex justify-content-end gap-2">
+                <div class="d-flex flex-column-reverse flex-sm-row justify-content-end gap-2">
                   <button type="submit" class="btn btn-erp-primary" id="btn-save-policy">
                     <i class="bi bi-save me-1"></i>Save Policy Settings
                   </button>
@@ -226,7 +226,7 @@ const SecurityComponent = {
         </div>
 
         <!-- Policy Tester & Security Overview -->
-        <div class="col-lg-5">
+        <div class="col-12 col-lg-5">
           <div class="card border-0 shadow-sm mb-4">
             <div class="card-header bg-white py-3 border-bottom">
               <h5 class="card-title mb-0 fw-bold"><i class="bi bi-check-all text-success me-2"></i>Live Policy Tester</h5>
@@ -383,7 +383,7 @@ const SecurityComponent = {
 
     mount.innerHTML = `
       <div class="card border-0 shadow-sm">
-        <div class="card-header bg-white py-3 border-bottom d-flex justify-content-between align-items-center">
+        <div class="card-header bg-white py-3 border-bottom d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2">
           <div>
             <h5 class="card-title mb-0 fw-bold"><i class="bi bi-diagram-3-fill text-primary me-2"></i>Application Menu Hierarchy</h5>
             <small class="text-muted">Manage system menus, submenus, icons, and routes.</small>
@@ -392,8 +392,8 @@ const SecurityComponent = {
             <i class="bi bi-plus-circle me-1"></i>Add New Menu
           </button>
         </div>
-        <div class="table-responsive">
-          <table class="table table-hover align-middle mb-0">
+        <div class="table-responsive erp-table-wrapper">
+          <table class="table table-hover align-middle mb-0" style="min-width: 720px;">
             <thead class="table-light">
               <tr>
                 <th>Menu Title</th>
@@ -422,7 +422,7 @@ const SecurityComponent = {
     const modalMount = document.getElementById('security-modals-mount');
     modalMount.innerHTML = `
       <div class="modal fade" id="createMenuModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
           <div class="modal-content border-0 shadow">
             <div class="modal-header">
               <h5 class="modal-title fw-bold"><i class="bi bi-plus-circle text-primary me-2"></i>Create New Menu</h5>
@@ -435,24 +435,24 @@ const SecurityComponent = {
                   <input type="text" id="menu-title" class="form-control" placeholder="e.g. Analytics Hub" required>
                 </div>
                 <div class="row g-3 mb-3">
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <label class="form-label" for="menu-route">Route Identifier</label>
                     <input type="text" id="menu-route" class="form-control" placeholder="e.g. analytics (or blank for parent group)">
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <label class="form-label" for="menu-icon">Bootstrap Icon Class</label>
                     <input type="text" id="menu-icon" class="form-control" placeholder="bi-graph-up" value="bi-app">
                   </div>
                 </div>
                 <div class="row g-3 mb-3">
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <label class="form-label" for="menu-parent">Parent Menu</label>
                     <select id="menu-parent" class="form-select">
                       <option value="">None (Top-Level Menu)</option>
                       ${parentOptions}
                     </select>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <label class="form-label" for="menu-sort">Sort Order</label>
                     <input type="number" id="menu-sort" class="form-control" value="10" min="0">
                   </div>
@@ -460,7 +460,7 @@ const SecurityComponent = {
 
                 <div class="mb-3">
                   <label class="form-label fw-semibold">Default Permission Actions to Generate:</label>
-                  <div class="d-flex gap-3">
+                  <div class="d-flex flex-wrap gap-3">
                     <label class="form-check"><input class="form-check-input" type="checkbox" id="gen-view" checked> View</label>
                     <label class="form-check"><input class="form-check-input" type="checkbox" id="gen-add" checked> Add</label>
                     <label class="form-check"><input class="form-check-input" type="checkbox" id="gen-edit" checked> Edit</label>
@@ -534,7 +534,7 @@ const SecurityComponent = {
     const modalMount = document.getElementById('security-modals-mount');
     modalMount.innerHTML = `
       <div class="modal fade" id="editMenuModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
           <div class="modal-content border-0 shadow">
             <div class="modal-header">
               <h5 class="modal-title fw-bold"><i class="bi bi-pencil-square text-primary me-2"></i>Edit Menu: ${menu.title}</h5>
@@ -547,24 +547,24 @@ const SecurityComponent = {
                   <input type="text" id="edit-menu-title" class="form-control" value="${menu.title}" required>
                 </div>
                 <div class="row g-3 mb-3">
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <label class="form-label" for="edit-menu-route">Route Identifier</label>
                     <input type="text" id="edit-menu-route" class="form-control" value="${menu.route || ''}">
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <label class="form-label" for="edit-menu-icon">Bootstrap Icon Class</label>
                     <input type="text" id="edit-menu-icon" class="form-control" value="${menu.icon || ''}">
                   </div>
                 </div>
                 <div class="row g-3 mb-3">
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <label class="form-label" for="edit-menu-parent">Parent Menu</label>
                     <select id="edit-menu-parent" class="form-select">
                       <option value="">None (Top-Level Menu)</option>
                       ${parentOptions}
                     </select>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <label class="form-label" for="edit-menu-sort">Sort Order</label>
                     <input type="number" id="edit-menu-sort" class="form-control" value="${menu.sortOrder}" min="0">
                   </div>
@@ -673,7 +673,7 @@ const SecurityComponent = {
 
     mount.innerHTML = `
       <div class="card border-0 shadow-sm">
-        <div class="card-header bg-white py-3 border-bottom d-flex justify-content-between align-items-center">
+        <div class="card-header bg-white py-3 border-bottom d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2">
           <div>
             <h5 class="card-title mb-0 fw-bold"><i class="bi bi-sliders text-primary me-2"></i>Granular Menu Options</h5>
             <small class="text-muted">Manage actionable operations per menu (View, Add, Edit, Delete, Export, etc.)</small>
@@ -682,8 +682,8 @@ const SecurityComponent = {
             <i class="bi bi-plus-circle me-1"></i>Add Option
           </button>
         </div>
-        <div class="table-responsive">
-          <table class="table table-hover align-middle mb-0">
+        <div class="table-responsive erp-table-wrapper">
+          <table class="table table-hover align-middle mb-0" style="min-width: 660px;">
             <thead class="table-light">
               <tr>
                 <th>Menu Module</th>
@@ -715,7 +715,7 @@ const SecurityComponent = {
     const modalMount = document.getElementById('security-modals-mount');
     modalMount.innerHTML = `
       <div class="modal fade" id="createOptionModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
           <div class="modal-content border-0 shadow">
             <div class="modal-header">
               <h5 class="modal-title fw-bold"><i class="bi bi-plus-circle text-primary me-2"></i>Add Menu Option</h5>
@@ -730,11 +730,11 @@ const SecurityComponent = {
                   </select>
                 </div>
                 <div class="row g-3 mb-3">
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <label class="form-label" for="opt-code">Action Code <span class="required-asterisk">*</span></label>
                     <input type="text" id="opt-code" class="form-control text-uppercase" placeholder="e.g. EXPORT" required>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <label class="form-label" for="opt-name">Display Name <span class="required-asterisk">*</span></label>
                     <input type="text" id="opt-name" class="form-control" placeholder="e.g. Export Data" required>
                   </div>
@@ -792,7 +792,7 @@ const SecurityComponent = {
     const modalMount = document.getElementById('security-modals-mount');
     modalMount.innerHTML = `
       <div class="modal fade" id="editOptionModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
           <div class="modal-content border-0 shadow">
             <div class="modal-header">
               <h5 class="modal-title fw-bold"><i class="bi bi-pencil-square text-primary me-2"></i>Edit Option: ${code}</h5>
@@ -801,11 +801,11 @@ const SecurityComponent = {
             <form id="edit-option-form" onsubmit="SecurityComponent.submitEditOption(event, ${optionId})">
               <div class="modal-body">
                 <div class="row g-3 mb-3">
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <label class="form-label" for="edit-opt-code">Action Code <span class="required-asterisk">*</span></label>
                     <input type="text" id="edit-opt-code" class="form-control text-uppercase" value="${code}" required>
                   </div>
-                  <div class="col-md-6">
+                  <div class="col-12 col-md-6">
                     <label class="form-label" for="edit-opt-name">Display Name <span class="required-asterisk">*</span></label>
                     <input type="text" id="edit-opt-name" class="form-control" value="${name}" required>
                   </div>
@@ -819,9 +819,9 @@ const SecurityComponent = {
                   <input type="number" id="edit-opt-sort" class="form-control" value="${sort}" min="0">
                 </div>
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-erp-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
-                <button type="submit" class="btn btn-erp-primary btn-sm" id="btn-submit-edit-opt">Save Option</button>
+              <div class="modal-footer d-flex flex-column-reverse flex-sm-row justify-content-end gap-2">
+                <button type="button" class="btn btn-erp-secondary btn-sm w-100 w-sm-auto" data-bs-dismiss="modal">Cancel</button>
+                <button type="submit" class="btn btn-erp-primary btn-sm w-100 w-sm-auto" id="btn-submit-edit-opt">Save Option</button>
               </div>
             </form>
           </div>
@@ -932,10 +932,10 @@ const SecurityComponent = {
 
     mount.innerHTML = `
       <div class="card border-0 shadow-sm">
-        <div class="card-header bg-white py-3 border-bottom d-flex flex-wrap justify-content-between align-items-center gap-3">
-          <div class="d-flex align-items-center gap-3">
+        <div class="card-header bg-white py-3 border-bottom d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
+          <div class="d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-3 w-100 w-md-auto">
             <h5 class="card-title mb-0 fw-bold"><i class="bi bi-person-check-fill text-primary me-2"></i>Access Control Matrix</h5>
-            <div class="btn-group" role="group">
+            <div class="btn-group flex-wrap" role="group">
               <button type="button" class="btn btn-sm ${this.selectedRole === 'Admin' ? 'btn-danger' : 'btn-outline-secondary'}" onclick="SecurityComponent.changeMatrixRole('Admin')">
                 <i class="bi bi-shield-lock-fill me-1"></i>Admin
               </button>
@@ -948,7 +948,7 @@ const SecurityComponent = {
             </div>
           </div>
 
-          <div class="d-flex gap-2">
+          <div class="d-flex flex-wrap gap-2 w-100 w-md-auto justify-content-start justify-content-md-end">
             ${this.selectedRole !== 'Admin' ? `
               <button type="button" class="btn btn-outline-secondary btn-sm" onclick="SecurityComponent.toggleAllMatrixPerms(true)">
                 <i class="bi bi-check-all me-1"></i>Grant All
@@ -967,8 +967,8 @@ const SecurityComponent = {
           </div>
         </div>
 
-        <div class="table-responsive">
-          <table class="table table-hover align-middle mb-0">
+        <div class="table-responsive erp-table-wrapper">
+          <table class="table table-hover align-middle mb-0" style="min-width: 760px;">
             <thead class="table-light">
               <tr>
                 <th>Menu Module</th>

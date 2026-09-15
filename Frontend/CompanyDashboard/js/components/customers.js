@@ -67,7 +67,7 @@ const CustomersComponent = {
     const pageItems = this.filteredData.slice(start, start + this.pageSize);
 
     container.innerHTML = `
-      <div class="page-header-container">
+      <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
         <div>
           <h1 class="page-title">Customer Directory</h1>
           <p class="page-subtitle">Client profiles, credit terms, and accounts receivable balances</p>
@@ -85,20 +85,20 @@ const CustomersComponent = {
       <div class="erp-card mb-3">
         <div class="erp-card-body p-3">
           <div class="row g-2 align-items-center">
-            <div class="col-md-6 col-lg-5">
+            <div class="col-12 col-md-5 col-lg-4">
               <div class="input-group input-group-sm">
                 <span class="input-group-text bg-light"><i class="bi bi-search"></i></span>
                 <input type="text" id="cust-search" class="form-control" placeholder="Search by customer name, company, email, phone..." oninput="CustomersComponent.filterList()">
               </div>
             </div>
-            <div class="col-md-3 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-3 col-lg-2">
               <select id="cust-status-filter" class="form-select form-select-sm" onchange="CustomersComponent.filterList()">
                 <option value="">All Statuses</option>
                 <option value="Active">Active</option>
                 <option value="Inactive">Inactive</option>
               </select>
             </div>
-            <div class="col-auto ms-auto text-muted small">
+            <div class="col-12 col-sm-auto ms-sm-auto text-muted small text-sm-end mt-2 mt-sm-0">
               Total: <strong id="cust-total-count">${this.filteredData.length}</strong> clients
             </div>
           </div>
@@ -107,8 +107,8 @@ const CustomersComponent = {
 
       <!-- Customers Table -->
       <div class="erp-card">
-        <div class="erp-table-wrapper">
-          <table class="erp-table" id="customers-table">
+        <div class="table-responsive erp-table-wrapper">
+          <table class="erp-table align-middle" id="customers-table" style="min-width: 720px;">
             <thead>
               <tr>
                 <th>ID</th>
@@ -234,7 +234,7 @@ const CustomersComponent = {
   renderForm(container, cust) {
     const isEdit = !!cust;
     container.innerHTML = `
-      <div class="page-header-container">
+      <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
         <div>
           <h1 class="page-title">${isEdit ? 'Edit Customer' : 'Add New Customer'}</h1>
           <p class="page-subtitle">${isEdit ? `Update details for ${cust.name}` : 'Register a customer profile and credit terms'}</p>
@@ -247,31 +247,31 @@ const CustomersComponent = {
       </div>
 
       <div class="erp-card">
-        <div class="erp-card-body p-4">
+        <div class="erp-card-body p-3 p-md-4">
           <form id="customer-form" onsubmit="CustomersComponent.submitForm(event, ${isEdit ? cust.customerId : 'null'})">
             <div class="form-section-title"><i class="bi bi-building me-2"></i>Account & Organization</div>
 
-            <div class="row mb-3">
-              <div class="col-md-6 mb-3 mb-md-0">
+            <div class="row g-3 mb-3">
+              <div class="col-12 col-md-6">
                 <label class="form-label" for="cust-name">Customer / Organization Name <span class="required-asterisk">*</span></label>
                 <input type="text" id="cust-name" class="form-control" value="${cust?.name || ''}" placeholder="e.g. Acme Global Industries" required>
               </div>
-              <div class="col-md-6">
+              <div class="col-12 col-md-6">
                 <label class="form-label" for="cust-company">Trading / Business Name</label>
                 <input type="text" id="cust-company" class="form-control" value="${cust?.company || ''}" placeholder="e.g. Acme Corp LLC">
               </div>
             </div>
 
-            <div class="row mb-4">
-              <div class="col-md-4 mb-3 mb-md-0">
+            <div class="row g-3 mb-4">
+              <div class="col-12 col-md-4">
                 <label class="form-label" for="cust-contact">Primary Contact Person</label>
                 <input type="text" id="cust-contact" class="form-control" value="${cust?.contactPerson || ''}" placeholder="e.g. Alice Walker">
               </div>
-              <div class="col-md-4 mb-3 mb-md-0">
+              <div class="col-12 col-sm-6 col-md-4">
                 <label class="form-label" for="cust-email">Email Address <span class="required-asterisk">*</span></label>
                 <input type="email" id="cust-email" class="form-control" value="${cust?.email || ''}" required>
               </div>
-              <div class="col-md-4">
+              <div class="col-12 col-sm-6 col-md-4">
                 <label class="form-label" for="cust-phone">Phone Number <span class="required-asterisk">*</span></label>
                 <input type="tel" id="cust-phone" class="form-control" value="${cust?.phone || ''}" required>
               </div>
@@ -279,19 +279,19 @@ const CustomersComponent = {
 
             <div class="form-section-title"><i class="bi bi-geo-alt me-2"></i>Billing & Credit Management</div>
 
-            <div class="row mb-3">
-              <div class="col-12 mb-3">
+            <div class="row g-3 mb-3">
+              <div class="col-12">
                 <label class="form-label" for="cust-address">Billing & Delivery Address</label>
                 <textarea id="cust-address" class="form-control" rows="2" placeholder="Street Address, City, State, ZIP">${cust?.address || ''}</textarea>
               </div>
             </div>
 
-            <div class="row mb-4">
-              <div class="col-md-6 mb-3 mb-md-0">
+            <div class="row g-3 mb-4">
+              <div class="col-12 col-md-6">
                 <label class="form-label" for="cust-credit">Credit Limit (₹) <span class="required-asterisk">*</span></label>
                 <input type="number" step="100" min="0" id="cust-credit" class="form-control" value="${cust?.creditLimit || 10000}" required>
               </div>
-              <div class="col-md-6">
+              <div class="col-12 col-md-6">
                 <label class="form-label" for="cust-status">Account Status <span class="required-asterisk">*</span></label>
                 <select id="cust-status" class="form-select" required>
                   <option value="Active" ${cust?.status === 'Active' ? 'selected' : ''}>Active</option>
@@ -302,8 +302,8 @@ const CustomersComponent = {
 
             ${!isEdit ? `
               <div class="form-section-title"><i class="bi bi-shield-lock me-2"></i>Customer Portal Credentials</div>
-              <div class="row mb-4">
-                <div class="col-12 mb-2">
+              <div class="row g-3 mb-4">
+                <div class="col-12">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="cust-create-login" onchange="document.getElementById('cust-password-row').style.display = this.checked ? 'block' : 'none'">
                     <label class="form-check-label fw-semibold" for="cust-create-login">
@@ -311,14 +311,14 @@ const CustomersComponent = {
                     </label>
                   </div>
                 </div>
-                <div class="col-md-6" id="cust-password-row" style="display: none;">
+                <div class="col-12 col-md-6" id="cust-password-row" style="display: none;">
                   <label class="form-label" for="cust-password">Portal Password <span class="required-asterisk">*</span></label>
                   <input type="password" id="cust-password" class="form-control" placeholder="Minimum 6 characters">
                 </div>
               </div>
             ` : ''}
 
-            <div class="d-flex justify-content-end gap-2 border-top pt-3">
+            <div class="d-flex flex-column-reverse flex-sm-row justify-content-end gap-2 border-top pt-3">
               <a href="#customers" class="btn btn-erp-secondary">Cancel</a>
               <button type="submit" class="btn btn-erp-primary" id="btn-save-cust">
                 <i class="bi bi-check2 me-1"></i>${isEdit ? 'Save Changes' : 'Register Customer'}

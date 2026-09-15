@@ -57,7 +57,7 @@ const SalesComponent = {
     const canAdd = Auth.hasPermission('sales', 'ADD');
 
     container.innerHTML = `
-      <div class="page-header-container">
+      <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
         <div>
           <h1 class="page-title">${isCustomer ? 'My Sales Orders' : 'Sales Orders & Fulfillment'}</h1>
           <p class="page-subtitle">${isCustomer ? 'Track your placed orders and fulfillment status' : 'Manage customer orders, inventory allocation, and automatic invoicing'}</p>
@@ -73,8 +73,8 @@ const SalesComponent = {
 
       <!-- KPI Summary -->
       <div class="row g-3 mb-4">
-        <div class="col-sm-6 col-xl-4">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-4">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">${isCustomer ? 'Total Order Value' : 'Total Sales Volume'}</span>
               <div class="kpi-icon-box icon-green"><i class="bi bi-cash-stack"></i></div>
@@ -84,8 +84,8 @@ const SalesComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-4">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-4">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Fulfilled & Invoiced</span>
               <div class="kpi-icon-box icon-blue"><i class="bi bi-check2-circle"></i></div>
@@ -95,8 +95,8 @@ const SalesComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-4">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-4">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Pending Orders</span>
               <div class="kpi-icon-box icon-amber"><i class="bi bi-hourglass-split"></i></div>
@@ -111,13 +111,13 @@ const SalesComponent = {
       <div class="erp-card mb-3">
         <div class="erp-card-body p-3">
           <div class="row g-2 align-items-center">
-            <div class="col-md-6 col-lg-5">
+            <div class="col-12 col-md-5 col-lg-4">
               <div class="input-group input-group-sm">
                 <span class="input-group-text bg-light"><i class="bi bi-search"></i></span>
                 <input type="text" id="so-search" class="form-control" placeholder="Search by order #, customer, items..." oninput="SalesComponent.filterList()">
               </div>
             </div>
-            <div class="col-md-3 col-lg-3">
+            <div class="col-12 col-sm-6 col-md-3">
               <select id="so-status-filter" class="form-select form-select-sm" onchange="SalesComponent.filterList()">
                 <option value="">All Statuses</option>
                 <option value="Confirmed">Confirmed</option>
@@ -126,7 +126,7 @@ const SalesComponent = {
                 <option value="Cancelled">Cancelled</option>
               </select>
             </div>
-            <div class="col-auto ms-auto text-muted small">
+            <div class="col-12 col-sm-auto ms-sm-auto text-muted small mt-1 mt-sm-0">
               Total: <strong id="so-total-count">${this.filteredData.length}</strong> orders
             </div>
           </div>
@@ -135,17 +135,17 @@ const SalesComponent = {
 
       <!-- Table -->
       <div class="erp-card">
-        <div class="erp-table-wrapper">
+        <div class="erp-table-wrapper table-responsive">
           <table class="erp-table" id="sales-table">
             <thead>
               <tr>
-                <th>Order Number</th>
-                ${!isCustomer ? '<th>Customer</th>' : ''}
-                <th>Order Date</th>
-                <th>Line Items</th>
-                <th>Total Amount</th>
-                <th>Status</th>
-                <th class="text-end">Actions</th>
+                <th class="text-nowrap" style="min-width: 130px;">Order Number</th>
+                ${!isCustomer ? '<th style="min-width: 170px;">Customer</th>' : ''}
+                <th class="text-nowrap" style="min-width: 110px;">Order Date</th>
+                <th class="text-nowrap" style="min-width: 100px;">Line Items</th>
+                <th class="text-nowrap" style="min-width: 120px;">Total Amount</th>
+                <th class="text-nowrap" style="min-width: 90px;">Status</th>
+                <th class="text-end text-nowrap" style="min-width: 100px;">Actions</th>
               </tr>
             </thead>
             <tbody id="sales-table-body">
@@ -263,7 +263,7 @@ const SalesComponent = {
       const today = new Date().toISOString().slice(0, 10);
 
       container.innerHTML = `
-        <div class="page-header-container">
+        <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
           <div>
             <h1 class="page-title">${isStaff ? 'Create Sales Order' : 'Place New Order'}</h1>
             <p class="page-subtitle">Configure customer order items with real-time stock verification</p>
@@ -277,12 +277,12 @@ const SalesComponent = {
 
         <form id="create-so-form" onsubmit="SalesComponent.submitCreate(event)">
           <div class="erp-card mb-4">
-            <div class="erp-card-body p-4">
+            <div class="erp-card-body p-3 p-sm-4">
               <div class="form-section-title"><i class="bi bi-file-earmark-person me-2"></i>Order & Customer Details</div>
 
-              <div class="row mb-3">
+              <div class="row g-3 mb-3">
                 ${isStaff ? `
-                  <div class="col-md-6 mb-3 mb-md-0">
+                  <div class="col-12 col-md-6">
                     <label class="form-label" for="so-customer">Customer Account <span class="required-asterisk">*</span></label>
                     <select id="so-customer" class="form-select" required>
                       <option value="">Select Customer</option>
@@ -292,13 +292,13 @@ const SalesComponent = {
                     </select>
                   </div>
                 ` : ''}
-                <div class="${isStaff ? 'col-md-6' : 'col-md-6 mb-3 mb-md-0'}">
+                <div class="${isStaff ? 'col-12 col-md-6' : 'col-12 col-md-6'}">
                   <label class="form-label" for="so-date">Order Date <span class="required-asterisk">*</span></label>
                   <input type="date" id="so-date" class="form-control" value="${today}" required>
                 </div>
               </div>
 
-              <div class="row mb-2">
+              <div class="row g-3 mb-2">
                 <div class="col-12">
                   <label class="form-label" for="so-notes">Order Notes / Instructions</label>
                   <input type="text" id="so-notes" class="form-control" placeholder="Purchase order reference, shipping remarks...">
@@ -309,22 +309,22 @@ const SalesComponent = {
 
           <!-- Dynamic Item Lines -->
           <div class="erp-card mb-4">
-            <div class="erp-card-header">
-              <h6 class="erp-card-title"><i class="bi bi-cart-check me-2"></i>Order Items & Inventory Availability</h6>
+            <div class="erp-card-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+              <h6 class="erp-card-title mb-0"><i class="bi bi-cart-check me-2"></i>Order Items & Inventory Availability</h6>
               <button type="button" class="btn btn-outline-primary btn-sm" onclick="SalesComponent.addItemRow()">
                 <i class="bi bi-plus-lg me-1"></i>Add Item Line
               </button>
             </div>
             <div class="erp-card-body p-0">
-              <div class="erp-table-wrapper">
-                <table class="erp-table mb-0" id="so-items-table">
+              <div class="erp-table-wrapper table-responsive">
+                <table class="erp-table mb-0" id="so-items-table" style="min-width: 620px;">
                   <thead>
                     <tr>
-                      <th style="width: 45%;">Product <span class="required-asterisk">*</span></th>
-                      <th style="width: 15%;">Quantity <span class="required-asterisk">*</span></th>
-                      <th style="width: 20%;">Unit Price (₹)</th>
-                      <th style="width: 15%;">Line Total</th>
-                      <th style="width: 5%;" class="text-center">Remove</th>
+                      <th style="min-width: 240px;">Product <span class="required-asterisk">*</span></th>
+                      <th style="min-width: 100px;">Quantity <span class="required-asterisk">*</span></th>
+                      <th style="min-width: 130px;">Unit Price (₹)</th>
+                      <th style="min-width: 110px;">Line Total</th>
+                      <th style="min-width: 60px;" class="text-center">Remove</th>
                     </tr>
                   </thead>
                   <tbody id="so-items-tbody">
@@ -341,7 +341,7 @@ const SalesComponent = {
             </div>
           </div>
 
-          <div class="d-flex justify-content-end gap-2">
+          <div class="d-flex flex-column-reverse flex-sm-row justify-content-end gap-2">
             <a href="#sales" class="btn btn-erp-secondary">Cancel</a>
             <button type="submit" class="btn btn-erp-primary" id="btn-save-so">
               <i class="bi bi-check2-circle me-1"></i>Confirm & Submit Order
@@ -518,13 +518,13 @@ const SalesComponent = {
     try {
       const so = await Api.get(`/sales/${id}`);
       container.innerHTML = `
-        <div class="page-header-container">
+        <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
           <div>
             <h1 class="page-title">Sales Order ${so.saleOrderNumber}</h1>
             <p class="page-subtitle">Placed by ${so.customerName} on ${App.formatDate(so.orderDate)}</p>
           </div>
-          <div>
-            <a href="#sales" class="btn btn-erp-secondary btn-sm me-2">
+          <div class="d-flex flex-wrap gap-2">
+            <a href="#sales" class="btn btn-erp-secondary btn-sm">
               <i class="bi bi-arrow-left me-1"></i>Back
             </a>
             <a href="#invoices" class="btn btn-outline-primary btn-sm">
@@ -534,21 +534,21 @@ const SalesComponent = {
         </div>
 
         <div class="row g-3 mb-4">
-          <div class="col-lg-8">
+          <div class="col-12 col-lg-8">
             <div class="erp-card mb-3">
-              <div class="erp-card-header">
-                <h6 class="erp-card-title"><i class="bi bi-cart-check me-2"></i>Ordered Line Items</h6>
+              <div class="erp-card-header d-flex justify-content-between align-items-center">
+                <h6 class="erp-card-title mb-0"><i class="bi bi-cart-check me-2"></i>Ordered Line Items</h6>
                 <span class="badge-status badge-${so.status.toLowerCase()}">${so.status}</span>
               </div>
-              <div class="erp-table-wrapper">
-                <table class="erp-table">
+              <div class="erp-table-wrapper table-responsive">
+                <table class="erp-table table-compact">
                   <thead>
                     <tr>
-                      <th>SKU</th>
-                      <th>Product Name</th>
-                      <th>Quantity</th>
-                      <th>Unit Price</th>
-                      <th class="text-end">Line Total</th>
+                      <th class="text-nowrap" style="min-width: 120px;">SKU</th>
+                      <th style="min-width: 170px;">Product Name</th>
+                      <th class="text-center text-nowrap" style="min-width: 80px;">Quantity</th>
+                      <th class="text-end text-nowrap" style="min-width: 110px;">Unit Price</th>
+                      <th class="text-end text-nowrap" style="min-width: 110px;">Line Total</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -556,8 +556,8 @@ const SalesComponent = {
                       <tr>
                         <td class="fw-semibold text-primary font-monospace">${item.sku}</td>
                         <td>${item.productName}</td>
-                        <td class="fw-bold">${item.quantity}</td>
-                        <td>${App.formatCurrency(item.unitPrice)}</td>
+                        <td class="fw-bold text-center">${item.quantity}</td>
+                        <td class="text-end">${App.formatCurrency(item.unitPrice)}</td>
                         <td class="text-end fw-bold">${App.formatCurrency(item.totalPrice)}</td>
                       </tr>
                     `).join('')}
@@ -573,7 +573,7 @@ const SalesComponent = {
             </div>
 
             ${so.notes ? `
-              <div class="erp-card">
+              <div class="erp-card mb-3 mb-lg-0">
                 <div class="erp-card-body p-3">
                   <h6 class="fw-bold mb-1"><i class="bi bi-chat-left-text me-1 text-primary"></i>Customer Notes:</h6>
                   <p class="text-muted small mb-0">${so.notes}</p>
@@ -582,10 +582,10 @@ const SalesComponent = {
             ` : ''}
           </div>
 
-          <div class="col-lg-4">
+          <div class="col-12 col-lg-4">
             <div class="erp-card">
               <div class="erp-card-header">
-                <h6 class="erp-card-title"><i class="bi bi-person-lines-fill me-2"></i>Client Summary</h6>
+                <h6 class="erp-card-title mb-0"><i class="bi bi-person-lines-fill me-2"></i>Client Summary</h6>
               </div>
               <div class="erp-card-body">
                 <div class="mb-3">

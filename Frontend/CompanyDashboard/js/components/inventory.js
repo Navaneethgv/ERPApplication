@@ -53,14 +53,14 @@ const InventoryComponent = {
     const pageItems = this.filteredData.slice(start, start + this.pageSize);
 
     container.innerHTML = `
-      <div class="page-header-container">
+      <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
         <div>
           <h1 class="page-title">Warehouse & Inventory Management</h1>
           <p class="page-subtitle">Real-time stock tracking, warehouse locations, adjustments, and valuation</p>
         </div>
-        <div>
+        <div class="d-flex flex-wrap gap-2">
           ${canEdit ? `
-            <a href="#inventory/adjust" class="btn btn-erp-primary btn-sm me-2">
+            <a href="#inventory/adjust" class="btn btn-erp-primary btn-sm">
               <i class="bi bi-arrow-left-right me-1"></i>Stock Adjustment
             </a>
           ` : ''}
@@ -74,8 +74,8 @@ const InventoryComponent = {
 
       <!-- Inventory KPI Cards -->
       <div class="row g-3 mb-4">
-        <div class="col-sm-6 col-xl-4">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-4">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Total Cost Valuation</span>
               <div class="kpi-icon-box icon-green"><i class="bi bi-cash-stack"></i></div>
@@ -85,8 +85,8 @@ const InventoryComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-4">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-4">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Total Units On Hand</span>
               <div class="kpi-icon-box icon-blue"><i class="bi bi-box-seam"></i></div>
@@ -96,8 +96,8 @@ const InventoryComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-4">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-4">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Low Stock SKUs</span>
               <div class="kpi-icon-box icon-rose"><i class="bi bi-exclamation-triangle-fill"></i></div>
@@ -112,26 +112,26 @@ const InventoryComponent = {
       <div class="erp-card mb-3">
         <div class="erp-card-body p-3">
           <div class="row g-2 align-items-center">
-            <div class="col-md-6 col-lg-5">
+            <div class="col-12 col-md-5 col-lg-4">
               <div class="input-group input-group-sm">
                 <span class="input-group-text bg-light"><i class="bi bi-search"></i></span>
                 <input type="text" id="inv-search" class="form-control" placeholder="Search by SKU, product name, warehouse location..." oninput="InventoryComponent.filterList()">
               </div>
             </div>
-            <div class="col-md-3 col-lg-3">
+            <div class="col-12 col-sm-6 col-md-3">
               <select id="inv-cat-filter" class="form-select form-select-sm" onchange="InventoryComponent.filterList()">
                 <option value="">All Categories</option>
                 ${categories.map(c => `<option value="${c}">${c}</option>`).join('')}
               </select>
             </div>
-            <div class="col-md-3 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-2">
               <select id="inv-status-filter" class="form-select form-select-sm" onchange="InventoryComponent.filterList()">
                 <option value="">All Statuses</option>
                 <option value="low">Low Stock Only</option>
                 <option value="good">Adequate Stock</option>
               </select>
             </div>
-            <div class="col-auto ms-auto text-muted small">
+            <div class="col-12 col-sm-auto ms-sm-auto text-muted small text-sm-end mt-2 mt-sm-0">
               Total: <strong id="inv-total-count">${this.filteredData.length}</strong> items
             </div>
           </div>
@@ -140,8 +140,8 @@ const InventoryComponent = {
 
       <!-- Inventory Table -->
       <div class="erp-card">
-        <div class="erp-table-wrapper">
-          <table class="erp-table" id="inventory-table">
+        <div class="table-responsive erp-table-wrapper">
+          <table class="erp-table align-middle" id="inventory-table" style="min-width: 780px;">
             <thead>
               <tr>
                 <th>SKU</th>
@@ -272,7 +272,7 @@ const InventoryComponent = {
     try {
       const products = await Api.get('/products');
       container.innerHTML = `
-        <div class="page-header-container">
+        <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
           <div>
             <h1 class="page-title">Inventory Stock Adjustment</h1>
             <p class="page-subtitle">Manual balance correction, stock-in, damage write-offs, or audit synchronization</p>
@@ -285,12 +285,12 @@ const InventoryComponent = {
         </div>
 
         <div class="erp-card">
-          <div class="erp-card-body p-4">
+          <div class="erp-card-body p-3 p-md-4">
             <form id="adjustment-form" onsubmit="InventoryComponent.submitAdjustment(event)">
               <div class="form-section-title"><i class="bi bi-sliders me-2"></i>Adjustment Parameters</div>
 
-              <div class="row mb-3">
-                <div class="col-md-6 mb-3 mb-md-0">
+              <div class="row g-3 mb-3">
+                <div class="col-12 col-md-6">
                   <label class="form-label" for="adj-product">Target Product <span class="required-asterisk">*</span></label>
                   <select id="adj-product" class="form-select" required onchange="InventoryComponent.updateSelectedStockInfo(this.value)">
                     <option value="">Select a Product</option>
@@ -301,7 +301,7 @@ const InventoryComponent = {
                     `).join('')}
                   </select>
                 </div>
-                <div class="col-md-6">
+                <div class="col-12 col-md-6">
                   <label class="form-label" for="adj-type">Adjustment Action <span class="required-asterisk">*</span></label>
                   <select id="adj-type" class="form-select" required>
                     <option value="StockIn">Stock In (Add Quantity)</option>
@@ -313,25 +313,25 @@ const InventoryComponent = {
                 </div>
               </div>
 
-              <div class="row mb-3">
-                <div class="col-md-6 mb-3 mb-md-0">
+              <div class="row g-3 mb-3">
+                <div class="col-12 col-md-6">
                   <label class="form-label" for="adj-qty">Quantity Change <span class="required-asterisk">*</span></label>
                   <input type="number" min="1" id="adj-qty" class="form-control" placeholder="Quantity to adjust" required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-12 col-md-6">
                   <label class="form-label" for="adj-loc">Warehouse Location</label>
                   <input type="text" id="adj-loc" class="form-control" value="Main Warehouse" placeholder="e.g. Warehouse A-01">
                 </div>
               </div>
 
-              <div class="row mb-4">
+              <div class="row g-3 mb-4">
                 <div class="col-12">
                   <label class="form-label" for="adj-reason">Reason / Audit Justification <span class="required-asterisk">*</span></label>
                   <textarea id="adj-reason" class="form-control" rows="2" placeholder="Explain the reason for this inventory adjustment..." required></textarea>
                 </div>
               </div>
 
-              <div class="d-flex justify-content-end gap-2 border-top pt-3">
+              <div class="d-flex flex-column-reverse flex-sm-row justify-content-end gap-2 border-top pt-3">
                 <a href="#inventory" class="btn btn-erp-secondary">Cancel</a>
                 <button type="submit" class="btn btn-erp-primary" id="btn-save-adj">
                   <i class="bi bi-check2 me-1"></i>Apply Adjustment

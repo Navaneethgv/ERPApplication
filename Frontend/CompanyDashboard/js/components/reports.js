@@ -4,7 +4,7 @@ const ReportsComponent = {
 
   async render(container) {
     container.innerHTML = `
-      <div class="page-header-container d-print-none">
+      <div class="page-header-container d-print-none d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
         <div>
           <h1 class="page-title">Executive Reports & Business Intelligence</h1>
           <p class="page-subtitle">Real-time financial, operational, and inventory performance analytics</p>
@@ -19,7 +19,7 @@ const ReportsComponent = {
       <!-- Report Tabs & Filters -->
       <div class="erp-card mb-4 d-print-none">
         <div class="erp-card-body p-3">
-          <ul class="nav nav-pills mb-3" id="reports-nav">
+          <ul class="nav nav-pills flex-nowrap overflow-x-auto text-nowrap pb-2 mb-3" id="reports-nav">
             <li class="nav-item">
               <button class="nav-link ${this.activeTab === 'sales' ? 'active' : ''}" onclick="ReportsComponent.switchTab('sales')">
                 <i class="bi bi-cart-check me-1"></i>Sales Analysis
@@ -42,17 +42,17 @@ const ReportsComponent = {
             </li>
           </ul>
 
-          <div class="row g-2 align-items-center border-top pt-3">
-            <div class="col-md-3">
-              <label class="form-label small mb-1">From Date:</label>
+          <div class="row g-2 align-items-end border-top pt-3">
+            <div class="col-12 col-sm-6 col-md-3">
+              <label class="form-label small mb-1" for="rep-start-date">From Date:</label>
               <input type="date" id="rep-start-date" class="form-control form-control-sm">
             </div>
-            <div class="col-md-3">
-              <label class="form-label small mb-1">To Date:</label>
+            <div class="col-12 col-sm-6 col-md-3">
+              <label class="form-label small mb-1" for="rep-end-date">To Date:</label>
               <input type="date" id="rep-end-date" class="form-control form-control-sm">
             </div>
-            <div class="col-md-4 mt-auto">
-              <button type="button" class="btn btn-erp-primary btn-sm me-1" onclick="ReportsComponent.applyFilter()">
+            <div class="col-12 col-md-6 mt-2 mt-md-0 d-flex flex-wrap gap-2">
+              <button type="button" class="btn btn-erp-primary btn-sm" onclick="ReportsComponent.applyFilter()">
                 <i class="bi bi-funnel me-1"></i>Apply Filters
               </button>
               <button type="button" class="btn btn-erp-secondary btn-sm" onclick="ReportsComponent.resetFilter()">
@@ -149,26 +149,26 @@ const ReportsComponent = {
     container.innerHTML = `
       <!-- KPI Row -->
       <div class="row g-3 mb-4">
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header"><span class="kpi-title">Total Orders</span><div class="kpi-icon-box icon-blue"><i class="bi bi-cart"></i></div></div>
             <div class="kpi-value">${data.totalOrders}</div>
           </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header"><span class="kpi-title">Total Revenue</span><div class="kpi-icon-box icon-green"><i class="bi bi-cash"></i></div></div>
             <div class="kpi-value text-success">${App.formatCurrency(data.totalSalesAmount)}</div>
           </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header"><span class="kpi-title">Average Order Value</span><div class="kpi-icon-box icon-purple"><i class="bi bi-calculator"></i></div></div>
             <div class="kpi-value">${App.formatCurrency(data.averageOrderValue)}</div>
           </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header"><span class="kpi-title">Fulfilled Rate</span><div class="kpi-icon-box icon-teal"><i class="bi bi-check2-all"></i></div></div>
             <div class="kpi-value">${data.totalOrders > 0 ? Math.round((data.fulfilledOrders / data.totalOrders) * 100) : 0}%</div>
           </div>
@@ -177,15 +177,15 @@ const ReportsComponent = {
 
       <!-- Charts Row -->
       <div class="row g-3 mb-4">
-        <div class="col-lg-7">
+        <div class="col-12 col-lg-7">
           <div class="erp-card h-100">
-            <div class="erp-card-header"><h6 class="erp-card-title">Sales Revenue by Month</h6></div>
+            <div class="erp-card-header"><h6 class="erp-card-title mb-0">Sales Revenue by Month</h6></div>
             <div class="erp-card-body"><canvas id="rep-sales-trend" height="130"></canvas></div>
           </div>
         </div>
-        <div class="col-lg-5">
+        <div class="col-12 col-lg-5">
           <div class="erp-card h-100">
-            <div class="erp-card-header"><h6 class="erp-card-title">Revenue by Product Category</h6></div>
+            <div class="erp-card-header"><h6 class="erp-card-title mb-0">Revenue by Product Category</h6></div>
             <div class="erp-card-body d-flex justify-content-center align-items-center">
               <div style="max-height: 240px; width: 100%;"><canvas id="rep-sales-cat"></canvas></div>
             </div>
@@ -195,9 +195,9 @@ const ReportsComponent = {
 
       <!-- Orders Breakdown Table -->
       <div class="erp-card">
-        <div class="erp-card-header"><h6 class="erp-card-title">Detailed Sales Orders</h6></div>
-        <div class="erp-table-wrapper">
-          <table class="erp-table">
+        <div class="erp-card-header"><h6 class="erp-card-title mb-0">Detailed Sales Orders</h6></div>
+        <div class="table-responsive erp-table-wrapper">
+          <table class="erp-table align-middle" style="min-width: 580px;">
             <thead>
               <tr>
                 <th>Order #</th>
@@ -262,26 +262,26 @@ const ReportsComponent = {
   renderPurchasesReport(container, data) {
     container.innerHTML = `
       <div class="row g-3 mb-4">
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header"><span class="kpi-title">Total POs</span><div class="kpi-icon-box icon-amber"><i class="bi bi-bag"></i></div></div>
             <div class="kpi-value">${data.totalPurchases}</div>
           </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header"><span class="kpi-title">Procurement Spend</span><div class="kpi-icon-box icon-rose"><i class="bi bi-cash-stack"></i></div></div>
             <div class="kpi-value text-danger">${App.formatCurrency(data.totalPurchasedAmount)}</div>
           </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header"><span class="kpi-title">Received POs</span><div class="kpi-icon-box icon-green"><i class="bi bi-box-seam"></i></div></div>
             <div class="kpi-value text-success">${data.receivedPurchases}</div>
           </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header"><span class="kpi-title">Pending Delivery</span><div class="kpi-icon-box icon-blue"><i class="bi bi-truck"></i></div></div>
             <div class="kpi-value text-primary">${data.pendingPurchases}</div>
           </div>
@@ -289,19 +289,19 @@ const ReportsComponent = {
       </div>
 
       <div class="row g-3 mb-4">
-        <div class="col-lg-6">
+        <div class="col-12 col-lg-6">
           <div class="erp-card h-100">
-            <div class="erp-card-header"><h6 class="erp-card-title">Procurement Spend by Vendor</h6></div>
+            <div class="erp-card-header"><h6 class="erp-card-title mb-0">Procurement Spend by Vendor</h6></div>
             <div class="erp-card-body d-flex justify-content-center align-items-center">
               <div style="max-height: 240px; width: 100%;"><canvas id="rep-supp-spend"></canvas></div>
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-12 col-lg-6">
           <div class="erp-card h-100">
-            <div class="erp-card-header"><h6 class="erp-card-title">Recent Purchase Orders</h6></div>
-            <div class="erp-table-wrapper">
-              <table class="erp-table">
+            <div class="erp-card-header"><h6 class="erp-card-title mb-0">Recent Purchase Orders</h6></div>
+            <div class="table-responsive erp-table-wrapper">
+              <table class="erp-table align-middle" style="min-width: 480px;">
                 <thead>
                   <tr>
                     <th>PO #</th>
@@ -347,26 +347,26 @@ const ReportsComponent = {
   renderInventoryReport(container, data) {
     container.innerHTML = `
       <div class="row g-3 mb-4">
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header"><span class="kpi-title">Catalog SKUs</span><div class="kpi-icon-box icon-teal"><i class="bi bi-box-seam"></i></div></div>
             <div class="kpi-value">${data.totalItems}</div>
           </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header"><span class="kpi-title">Cost Valuation</span><div class="kpi-icon-box icon-blue"><i class="bi bi-tag"></i></div></div>
             <div class="kpi-value text-primary">${App.formatCurrency(data.totalCostValuation)}</div>
           </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header"><span class="kpi-title">Retail Valuation</span><div class="kpi-icon-box icon-green"><i class="bi bi-cash-stack"></i></div></div>
             <div class="kpi-value text-success">${App.formatCurrency(data.totalRetailValuation)}</div>
           </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header"><span class="kpi-title">Estimated Margin</span><div class="kpi-icon-box icon-purple"><i class="bi bi-percent"></i></div></div>
             <div class="kpi-value text-purple">${data.potentialProfitMargin}%</div>
           </div>
@@ -374,9 +374,9 @@ const ReportsComponent = {
       </div>
 
       <div class="erp-card">
-        <div class="erp-card-header"><h6 class="erp-card-title">Stock Valuation Matrix</h6></div>
-        <div class="erp-table-wrapper">
-          <table class="erp-table">
+        <div class="erp-card-header"><h6 class="erp-card-title mb-0">Stock Valuation Matrix</h6></div>
+        <div class="table-responsive erp-table-wrapper">
+          <table class="erp-table align-middle" style="min-width: 720px;">
             <thead>
               <tr>
                 <th>SKU</th>
@@ -414,26 +414,26 @@ const ReportsComponent = {
 
     container.innerHTML = `
       <div class="row g-3 mb-4">
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header"><span class="kpi-title">Total Revenue (Inflow)</span><div class="kpi-icon-box icon-green"><i class="bi bi-arrow-down-left"></i></div></div>
             <div class="kpi-value text-success">${App.formatCurrency(data.totalIncome)}</div>
           </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header"><span class="kpi-title">Total Expenses (Outflow)</span><div class="kpi-icon-box icon-rose"><i class="bi bi-arrow-up-right"></i></div></div>
             <div class="kpi-value text-danger">${App.formatCurrency(data.totalExpenses)}</div>
           </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header"><span class="kpi-title">Net Operating Profit</span><div class="kpi-icon-box icon-blue"><i class="bi bi-pie-chart"></i></div></div>
             <div class="kpi-value ${netProfit >= 0 ? 'text-primary' : 'text-danger'}">${App.formatCurrency(netProfit)}</div>
           </div>
         </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header"><span class="kpi-title">Pending Receivables</span><div class="kpi-icon-box icon-amber"><i class="bi bi-receipt"></i></div></div>
             <div class="kpi-value">${App.formatCurrency(data.outstandingReceivables)}</div>
           </div>
@@ -441,42 +441,44 @@ const ReportsComponent = {
       </div>
 
       <div class="row g-3 mb-4">
-        <div class="col-lg-6">
+        <div class="col-12 col-lg-6">
           <div class="erp-card h-100">
-            <div class="erp-card-header"><h6 class="erp-card-title">Income vs Expense Distribution</h6></div>
+            <div class="erp-card-header"><h6 class="erp-card-title mb-0">Income vs Expense Distribution</h6></div>
             <div class="erp-card-body d-flex justify-content-center align-items-center">
               <div style="max-height: 240px; width: 100%;"><canvas id="rep-pnl-chart"></canvas></div>
             </div>
           </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-12 col-lg-6">
           <div class="erp-card h-100">
-            <div class="erp-card-header"><h6 class="erp-card-title">Balance Sheet Summary</h6></div>
+            <div class="erp-card-header"><h6 class="erp-card-title mb-0">Balance Sheet Summary</h6></div>
             <div class="erp-card-body">
-              <table class="table table-borderless small mb-0">
-                <tbody>
-                  <tr class="border-bottom">
-                    <td class="fw-semibold">Total Revenue Collected:</td>
-                    <td class="text-end fw-bold text-success">${App.formatCurrency(data.totalIncome)}</td>
-                  </tr>
-                  <tr class="border-bottom">
-                    <td class="fw-semibold">Total Expenses & Procurements:</td>
-                    <td class="text-end fw-bold text-danger">- ${App.formatCurrency(data.totalExpenses)}</td>
-                  </tr>
-                  <tr class="border-bottom table-light">
-                    <td class="fw-bold">Net Profit / Margin:</td>
-                    <td class="text-end fw-bold ${netProfit >= 0 ? 'text-primary' : 'text-danger'}">${App.formatCurrency(netProfit)}</td>
-                  </tr>
-                  <tr class="border-bottom">
-                    <td class="fw-semibold">Inventory Valuation (Cost):</td>
-                    <td class="text-end fw-bold">${App.formatCurrency(data.totalInventoryValue)}</td>
-                  </tr>
-                  <tr>
-                    <td class="fw-semibold">Accounts Receivable (Unpaid Invoices):</td>
-                    <td class="text-end fw-bold">${App.formatCurrency(data.outstandingReceivables)}</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="table-responsive">
+                <table class="table table-borderless small mb-0">
+                  <tbody>
+                    <tr class="border-bottom">
+                      <td class="fw-semibold">Total Revenue Collected:</td>
+                      <td class="text-end fw-bold text-success">${App.formatCurrency(data.totalIncome)}</td>
+                    </tr>
+                    <tr class="border-bottom">
+                      <td class="fw-semibold">Total Expenses & Procurements:</td>
+                      <td class="text-end fw-bold text-danger">- ${App.formatCurrency(data.totalExpenses)}</td>
+                    </tr>
+                    <tr class="border-bottom table-light">
+                      <td class="fw-bold">Net Profit / Margin:</td>
+                      <td class="text-end fw-bold ${netProfit >= 0 ? 'text-primary' : 'text-danger'}">${App.formatCurrency(netProfit)}</td>
+                    </tr>
+                    <tr class="border-bottom">
+                      <td class="fw-semibold">Inventory Valuation (Cost):</td>
+                      <td class="text-end fw-bold">${App.formatCurrency(data.totalInventoryValue)}</td>
+                    </tr>
+                    <tr>
+                      <td class="fw-semibold">Accounts Receivable (Unpaid Invoices):</td>
+                      <td class="text-end fw-bold">${App.formatCurrency(data.outstandingReceivables)}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>

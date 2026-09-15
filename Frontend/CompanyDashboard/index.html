@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>ApexERP - Enterprise Management System</title>
   
   <!-- Inter Font -->
@@ -15,7 +15,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   
   <!-- ERP Custom Stylesheet -->
-  <link href="css/erp.css?v=1.6" rel="stylesheet">
+  <link href="css/erp.css?v=2.0" rel="stylesheet">
   
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
@@ -23,67 +23,77 @@
 <body>
 
   <!-- ================= AUTH VIEW (LOGIN / REGISTER) ================= -->
-  <div id="auth-view" style="display: flex;">
-    <div class="auth-card">
-      <div class="auth-brand">
-        <i class="bi bi-boxes"></i>
-        <h2>ApexERP System</h2>
-        <p class="text-muted small">Enterprise Resource Planning & Operations</p>
-      </div>
-
-      <!-- Quick Demo Account Fill Buttons -->
-      <div class="mb-3">
-        <label class="form-label text-muted small fw-semibold">Quick Demo Login:</label>
-        <div class="quick-login-pills">
-          <button type="button" class="quick-pill-btn" onclick="Auth.fillDemo('admin@erp.com', 'Admin@123')">
-            <i class="bi bi-shield-lock-fill text-danger me-1"></i>Admin
-          </button>
-          <button type="button" class="quick-pill-btn" onclick="Auth.fillDemo('sarah.ops@erp.com', 'Employee@123')">
-            <i class="bi bi-person-gear text-primary me-1"></i>Ops Lead
-          </button>
-          <button type="button" class="quick-pill-btn" onclick="Auth.fillDemo('john.sales@erp.com', 'Employee@123')">
-            <i class="bi bi-person-badge text-info me-1"></i>Sales Rep
-          </button>
-          <button type="button" class="quick-pill-btn" onclick="Auth.fillDemo('acme.buyer@client.com', 'Customer@123')">
-            <i class="bi bi-building text-success me-1"></i>Customer
-          </button>
+  <div id="auth-view" class="min-vh-100 d-flex align-items-center justify-content-center p-3 p-sm-4" style="display: flex;">
+    <div class="container d-flex justify-content-center p-0">
+      <div class="card border-0 shadow-lg auth-card w-100 p-3 p-sm-4 p-md-4">
+        <div class="auth-brand text-center mb-4">
+          <i class="bi bi-boxes"></i>
+          <h2 class="fw-bold mt-2">ApexERP System</h2>
+          <p class="text-muted small mb-0">Enterprise Resource Planning & Operations</p>
         </div>
-      </div>
 
-      <div id="auth-alert" class="alert alert-danger py-2 small d-none"></div>
-
-      <!-- Login Form -->
-      <form id="login-form" onsubmit="Auth.handleLogin(event)">
+        <!-- Quick Demo Account Fill Buttons -->
         <div class="mb-3">
-          <label class="form-label" for="login-username">Email / Username <span class="required-asterisk">*</span></label>
-          <div class="input-group">
-            <span class="input-group-text bg-light"><i class="bi bi-envelope"></i></span>
-            <input type="text" id="login-username" class="form-control" placeholder="user@erp.com" required autocomplete="username">
+          <label class="form-label text-muted small fw-semibold">Quick Demo Login:</label>
+          <div class="row g-2 quick-login-pills">
+            <div class="col-6 col-sm-3">
+              <button type="button" class="quick-pill-btn w-100" onclick="Auth.fillDemo('admin@erp.com', 'Admin@123')">
+                <i class="bi bi-shield-lock-fill text-danger me-1"></i>Admin
+              </button>
+            </div>
+            <div class="col-6 col-sm-3">
+              <button type="button" class="quick-pill-btn w-100" onclick="Auth.fillDemo('sarah.ops@erp.com', 'Employee@123')">
+                <i class="bi bi-person-gear text-primary me-1"></i>Ops Lead
+              </button>
+            </div>
+            <div class="col-6 col-sm-3">
+              <button type="button" class="quick-pill-btn w-100" onclick="Auth.fillDemo('john.sales@erp.com', 'Employee@123')">
+                <i class="bi bi-person-badge text-info me-1"></i>Sales Rep
+              </button>
+            </div>
+            <div class="col-6 col-sm-3">
+              <button type="button" class="quick-pill-btn w-100" onclick="Auth.fillDemo('acme.buyer@client.com', 'Customer@123')">
+                <i class="bi bi-building text-success me-1"></i>Customer
+              </button>
+            </div>
           </div>
         </div>
 
-        <div class="mb-3">
-          <label class="form-label" for="login-password">Password <span class="required-asterisk">*</span></label>
-          <div class="input-group">
-            <span class="input-group-text bg-light"><i class="bi bi-lock"></i></span>
-            <input type="password" id="login-password" class="form-control" placeholder="••••••••" required autocomplete="current-password">
-            <button class="btn btn-outline-secondary btn-toggle-password" type="button" onclick="App.togglePasswordVisibility('login-password', this)" title="Show password" aria-label="Show password">
-              <i class="bi bi-eye"></i>
-            </button>
+        <div id="auth-alert" class="alert alert-danger py-2 small d-none"></div>
+
+        <!-- Login Form -->
+        <form id="login-form" onsubmit="Auth.handleLogin(event)">
+          <div class="mb-3">
+            <label class="form-label" for="login-username">Email / Username <span class="required-asterisk">*</span></label>
+            <div class="input-group">
+              <span class="input-group-text bg-light"><i class="bi bi-envelope"></i></span>
+              <input type="text" id="login-username" class="form-control" placeholder="user@erp.com" required autocomplete="username">
+            </div>
           </div>
+
+          <div class="mb-3">
+            <label class="form-label" for="login-password">Password <span class="required-asterisk">*</span></label>
+            <div class="input-group">
+              <span class="input-group-text bg-light"><i class="bi bi-lock"></i></span>
+              <input type="password" id="login-password" class="form-control" placeholder="••••••••" required autocomplete="current-password">
+              <button class="btn btn-outline-secondary btn-toggle-password" type="button" onclick="App.togglePasswordVisibility('login-password', this)" title="Show password" aria-label="Show password">
+                <i class="bi bi-eye"></i>
+              </button>
+            </div>
+          </div>
+
+          <button type="submit" id="btn-login" class="btn btn-erp-primary w-100 py-2 mt-2">
+            <span class="spinner-border spinner-border-sm d-none me-2"></span>Sign In to ERP
+          </button>
+        </form>
+
+        <!-- Customer Registration Toggle -->
+        <div class="mt-4 pt-3 border-top text-center">
+          <p class="text-muted small mb-2">Are you a customer needing portal access?</p>
+          <button type="button" class="btn btn-outline-secondary btn-sm" onclick="Auth.toggleRegisterModal()">
+            <i class="bi bi-person-plus me-1"></i>Create Customer Account
+          </button>
         </div>
-
-        <button type="submit" id="btn-login" class="btn btn-erp-primary w-100 py-2 mt-2">
-          <span class="spinner-border spinner-border-sm d-none me-2"></span>Sign In to ERP
-        </button>
-      </form>
-
-      <!-- Customer Registration Toggle -->
-      <div class="mt-4 pt-3 border-top text-center">
-        <p class="text-muted small mb-2">Are you a customer needing portal access?</p>
-        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="Auth.toggleRegisterModal()">
-          <i class="bi bi-person-plus me-1"></i>Create Customer Account
-        </button>
       </div>
     </div>
   </div>
@@ -116,26 +126,26 @@
     <div id="page-content-wrapper">
       
       <!-- Persistent Top Header -->
-      <header id="top-header">
-        <div class="header-left">
-          <button type="button" class="sidebar-toggle-btn" onclick="App.toggleSidebar()">
-            <i class="bi bi-list"></i>
+      <header id="top-header" class="d-flex align-items-center justify-content-between px-3 px-md-4 sticky-top bg-white border-bottom">
+        <div class="header-left d-flex align-items-center gap-2 gap-md-3 min-w-0">
+          <button type="button" class="sidebar-toggle-btn btn btn-light btn-sm border-0 p-1 px-2 d-inline-flex align-items-center" onclick="App.toggleSidebar()" aria-label="Toggle Navigation">
+            <i class="bi bi-list fs-5"></i>
           </button>
-          <div class="breadcrumb-container" id="breadcrumb-nav">
+          <div class="breadcrumb-container text-truncate" id="breadcrumb-nav">
             <span>ApexERP</span> / <span class="fw-semibold text-dark">Dashboard</span>
           </div>
         </div>
 
-        <div class="header-right">
+        <div class="header-right d-flex align-items-center gap-2 gap-sm-3 ms-auto">
           <!-- Live System Time / Status -->
           <div class="d-none d-md-flex align-items-center text-muted small">
-            <span class="badge bg-success-subtle text-success border border-success-subtle me-3">
+            <span class="badge bg-success-subtle text-success border border-success-subtle">
               <i class="bi bi-record-fill me-1"></i>Excel DB Online
             </span>
           </div>
 
           <!-- Order Notification Bell Dropdown (for Staff) -->
-          <div class="dropdown me-3" id="notification-bell-wrapper" style="display: none;">
+          <div class="dropdown me-1 me-sm-2" id="notification-bell-wrapper" style="display: none;">
             <button class="btn btn-notification-bell position-relative p-2" type="button" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false" title="Order Notifications">
               <i class="bi bi-bell fs-5 text-secondary"></i>
               <span id="notification-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
@@ -165,8 +175,8 @@
 
           <!-- User Menu Dropdown -->
           <div class="dropdown">
-            <button class="btn btn-link text-decoration-none dropdown-toggle text-dark d-flex align-items-center p-0" type="button" data-bs-toggle="dropdown">
-              <div class="user-avatar-circle me-2" style="width: 32px; height: 32px; font-size: 0.8rem;" id="header-user-avatar">AD</div>
+            <button class="btn btn-link text-decoration-none dropdown-toggle text-dark d-flex align-items-center p-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <div class="user-avatar-circle me-1 me-sm-2" style="width: 32px; height: 32px; font-size: 0.8rem;" id="header-user-avatar">AD</div>
               <span class="fw-semibold small d-none d-sm-inline" id="header-user-name">Admin</span>
             </button>
             <ul class="dropdown-menu dropdown-menu-end shadow-sm border">
@@ -180,7 +190,7 @@
       </header>
 
       <!-- Dynamic Main Workspace (Only this container updates on navigation!) -->
-      <main id="app-content">
+      <main id="app-content" class="container-fluid px-3 px-md-4 py-3 py-md-4">
         <!-- Dynamic component HTML renders here -->
       </main>
 
@@ -209,7 +219,7 @@
 
   <!-- ================= RECORD PAYMENT MODAL ================= -->
   <div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div class="modal-content border-0 shadow">
         <div class="modal-header">
           <h5 class="modal-title fw-bold"><i class="bi bi-cash-stack text-success me-2"></i>Record Invoice Payment</h5>
@@ -259,7 +269,7 @@
 
   <!-- ================= CUSTOMER REGISTRATION MODAL ================= -->
   <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
       <div class="modal-content border-0 shadow">
         <div class="modal-header">
           <h5 class="modal-title fw-bold"><i class="bi bi-person-plus text-primary me-2"></i>Register Customer Portal</h5>
@@ -271,15 +281,15 @@
 
             <div class="mb-3">
               <label class="form-label" for="reg-name">Contact / Full Name <span class="required-asterisk">*</span></label>
-              <input type="text" id="reg-name" class="form-control" placeholder="e.g. Alice     Walker" required>
+              <input type="text" id="reg-name" class="form-control" placeholder="e.g. Alice Walker" required>
             </div>
 
-            <div class="row">
-              <div class="col-md-6 mb-3">
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
                 <label class="form-label" for="reg-email">Email Address <span class="required-asterisk">*</span></label>
                 <input type="email" id="reg-email" class="form-control" placeholder="alice@company.com" required>
               </div>
-              <div class="col-md-6 mb-3">
+              <div class="col-md-6">
                 <label class="form-label" for="reg-phone">Phone <span class="required-asterisk">*</span></label>
                 <input type="tel" id="reg-phone" class="form-control" placeholder="+1-555-0199" required>
               </div>

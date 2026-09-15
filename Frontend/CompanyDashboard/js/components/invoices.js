@@ -46,7 +46,7 @@ const InvoicesComponent = {
     const pageItems = this.filteredData.slice(start, start + this.pageSize);
 
     container.innerHTML = `
-      <div class="page-header-container">
+      <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
         <div>
           <h1 class="page-title">${isCustomer ? 'My Invoices & Billing' : 'Invoices & Accounts Receivable'}</h1>
           <p class="page-subtitle">${isCustomer ? 'Review outstanding balances and process payments' : 'Track client billings, payment settlements, and overdue invoices'}</p>
@@ -55,8 +55,8 @@ const InvoicesComponent = {
 
       <!-- KPI Summary -->
       <div class="row g-3 mb-4">
-        <div class="col-sm-6 col-xl-4">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-4">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Total Invoiced</span>
               <div class="kpi-icon-box icon-blue"><i class="bi bi-receipt"></i></div>
@@ -66,8 +66,8 @@ const InvoicesComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-4">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-4">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Collected Revenue</span>
               <div class="kpi-icon-box icon-green"><i class="bi bi-check-circle"></i></div>
@@ -77,8 +77,8 @@ const InvoicesComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-4">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-4">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Outstanding Balance</span>
               <div class="kpi-icon-box icon-rose"><i class="bi bi-clock-history"></i></div>
@@ -93,13 +93,13 @@ const InvoicesComponent = {
       <div class="erp-card mb-3">
         <div class="erp-card-body p-3">
           <div class="row g-2 align-items-center">
-            <div class="col-md-6 col-lg-5">
+            <div class="col-12 col-md-5 col-lg-4">
               <div class="input-group input-group-sm">
                 <span class="input-group-text bg-light"><i class="bi bi-search"></i></span>
                 <input type="text" id="inv-search" class="form-control" placeholder="Search by invoice #, order #, customer name..." oninput="InvoicesComponent.filterList()">
               </div>
             </div>
-            <div class="col-md-3 col-lg-3">
+            <div class="col-12 col-sm-6 col-md-3 col-lg-3">
               <select id="inv-status-filter" class="form-select form-select-sm" onchange="InvoicesComponent.filterList()">
                 <option value="">All Statuses</option>
                 <option value="Unpaid">Unpaid</option>
@@ -107,7 +107,7 @@ const InvoicesComponent = {
                 <option value="Paid">Paid (Settled)</option>
               </select>
             </div>
-            <div class="col-auto ms-auto text-muted small">
+            <div class="col-12 col-sm-auto ms-sm-auto text-muted small text-sm-end mt-2 mt-sm-0">
               Total: <strong id="inv-total-count">${this.filteredData.length}</strong> invoices
             </div>
           </div>
@@ -116,8 +116,8 @@ const InvoicesComponent = {
 
       <!-- Table -->
       <div class="erp-card">
-        <div class="erp-table-wrapper">
-          <table class="erp-table" id="invoices-table">
+        <div class="table-responsive erp-table-wrapper">
+          <table class="erp-table align-middle" id="invoices-table" style="min-width: 800px;">
             <thead>
               <tr>
                 <th class="text-nowrap" style="min-width: 120px;">Invoice #</th>
@@ -251,16 +251,16 @@ const InvoicesComponent = {
       const matchingSale = sale.find(s => s.saleId === invoice.saleId || s.saleOrderNumber === invoice.saleOrderNumber);
 
       container.innerHTML = `
-        <div class="page-header-container d-print-none">
+        <div class="page-header-container d-print-none d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
           <div>
             <h1 class="page-title">Invoice ${invoice.invoiceNumber}</h1>
             <p class="page-subtitle">Billing statement for ${invoice.customerName}</p>
           </div>
-          <div>
-            <a href="#invoices" class="btn btn-erp-secondary btn-sm me-2">
+          <div class="d-flex flex-wrap gap-2">
+            <a href="#invoices" class="btn btn-erp-secondary btn-sm">
               <i class="bi bi-arrow-left me-1"></i>Back
             </a>
-            <button type="button" class="btn btn-outline-secondary btn-sm me-2" onclick="window.print()">
+            <button type="button" class="btn btn-outline-secondary btn-sm" onclick="window.print()">
               <i class="bi bi-printer me-1"></i>Print / PDF
             </button>
             ${(Auth.hasPermission('invoices', 'EDIT') && invoice.balanceAmount > 0) ? `
@@ -272,36 +272,36 @@ const InvoicesComponent = {
         </div>
 
         <!-- Printable Invoice Sheet -->
-        <div class="erp-card p-4 p-md-5">
-          <div class="d-flex justify-content-between align-items-start border-bottom pb-4 mb-4">
+        <div class="erp-card p-3 p-md-5">
+          <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start border-bottom pb-4 mb-4 gap-3">
             <div>
               <h2 class="fw-bold text-primary mb-1"><i class="bi bi-boxes me-2"></i>ApexERP</h2>
               <div class="text-muted small">Apex Enterprise Solutions Inc.</div>
               <div class="text-muted small">100 Enterprise Way, Suite 400</div>
               <div class="text-muted small">contact@erp.com &bull; +1 (800) 555-0199</div>
             </div>
-            <div class="text-end">
+            <div class="text-sm-end">
               <h3 class="fw-bold text-dark mb-1">INVOICE</h3>
               <div class="font-monospace fw-semibold text-primary fs-6">${invoice.invoiceNumber}</div>
               <div class="text-muted small mt-1">Status: <span class="badge-status badge-${invoice.status.toLowerCase()}">${invoice.status}</span></div>
             </div>
           </div>
 
-          <div class="row mb-4">
-            <div class="col-sm-6 mb-3 mb-sm-0">
+          <div class="row g-3 mb-4">
+            <div class="col-12 col-sm-6">
               <h6 class="text-muted text-uppercase small fw-bold mb-2">Billed To:</h6>
               <div class="fw-bold text-dark fs-6">${invoice.customerName}</div>
               <div class="text-muted small">Sales Order Reference: <strong>${invoice.saleOrderNumber}</strong></div>
             </div>
-            <div class="col-sm-6 text-sm-end">
+            <div class="col-12 col-sm-6 text-sm-end">
               <div class="mb-1"><span class="text-muted small">Issue Date:</span> <strong>${App.formatDate(invoice.issueDate)}</strong></div>
               <div class="mb-1"><span class="text-muted small">Payment Due Date:</span> <strong class="text-danger">${App.formatDate(invoice.dueDate)}</strong></div>
             </div>
           </div>
 
           <!-- Items Table -->
-          <div class="erp-table-wrapper mb-4">
-            <table class="erp-table">
+          <div class="table-responsive erp-table-wrapper mb-4">
+            <table class="erp-table align-middle" style="min-width: 500px;">
               <thead>
                 <tr>
                   <th>SKU</th>

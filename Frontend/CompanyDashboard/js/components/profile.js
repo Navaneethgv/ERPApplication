@@ -12,7 +12,7 @@ const ProfileComponent = {
       const user = await Api.get('/auth/profile');
 
       container.innerHTML = `
-        <div class="page-header-container">
+        <div class="page-header-container d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3">
           <div>
             <h1 class="page-title">My Profile & Account Security</h1>
             <p class="page-subtitle">Manage personal information and update authentication credentials</p>
@@ -21,7 +21,7 @@ const ProfileComponent = {
 
         <div class="row g-4">
           <!-- Profile Card -->
-          <div class="col-lg-5">
+          <div class="col-12 col-lg-5">
             <div class="erp-card">
               <div class="erp-card-header">
                 <h6 class="erp-card-title"><i class="bi bi-person-circle me-2"></i>Account Information</h6>
@@ -69,7 +69,7 @@ const ProfileComponent = {
           </div>
 
           <!-- Change Password Card -->
-          <div class="col-lg-7">
+          <div class="col-12 col-lg-7">
             <div class="erp-card">
               <div class="erp-card-header">
                 <h6 class="erp-card-title"><i class="bi bi-shield-lock me-2"></i>Change Security Password</h6>
@@ -87,8 +87,8 @@ const ProfileComponent = {
                     </div>
                   </div>
 
-                  <div class="row mb-3">
-                    <div class="col-md-6 mb-3 mb-md-0">
+                  <div class="row g-3 mb-3">
+                    <div class="col-12 col-md-6">
                       <label class="form-label" for="cp-new">New Password <span class="required-asterisk">*</span></label>
                       <div class="input-group">
                         <span class="input-group-text bg-light"><i class="bi bi-lock"></i></span>
@@ -98,7 +98,7 @@ const ProfileComponent = {
                         </button>
                       </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                       <label class="form-label" for="cp-confirm">Confirm New Password <span class="required-asterisk">*</span></label>
                       <div class="input-group">
                         <span class="input-group-text bg-light"><i class="bi bi-lock"></i></span>
@@ -117,7 +117,7 @@ const ProfileComponent = {
                   </div>
 
                   <div class="d-flex justify-content-end">
-                    <button type="submit" class="btn btn-erp-primary" id="btn-change-pwd">
+                    <button type="submit" class="btn btn-erp-primary w-100 w-sm-auto" id="btn-change-pwd">
                       <i class="bi bi-key me-1"></i>Update Password
                     </button>
                   </div>

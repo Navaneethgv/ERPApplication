@@ -48,7 +48,7 @@ const TransactionsComponent = {
     const pageItems = this.filteredData.slice(start, start + this.pageSize);
 
     container.innerHTML = `
-      <div class="page-header-container">
+      <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
         <div>
           <h1 class="page-title">${isCustomer ? 'My Payment History' : 'Financial Ledger & Transactions'}</h1>
           <p class="page-subtitle">${isCustomer ? 'Record of settled payments and invoice settlements' : 'Audited general ledger of revenue, procurement, and expenses'}</p>
@@ -64,8 +64,8 @@ const TransactionsComponent = {
 
       <!-- Financial Summary KPI Cards -->
       <div class="row g-3 mb-4">
-        <div class="col-sm-6 col-xl-4">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-4">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">${isCustomer ? 'Total Payments Settled' : 'Total Cash Inflow (Revenue)'}</span>
               <div class="kpi-icon-box icon-green"><i class="bi bi-arrow-down-left"></i></div>
@@ -76,8 +76,8 @@ const TransactionsComponent = {
         </div>
 
         ${!isCustomer ? `
-          <div class="col-sm-6 col-xl-4">
-            <div class="kpi-card">
+          <div class="col-12 col-sm-6 col-xl-4">
+            <div class="kpi-card h-100">
               <div class="kpi-header">
                 <span class="kpi-title">Total Cash Outflow (Expenses)</span>
                 <div class="kpi-icon-box icon-rose"><i class="bi bi-arrow-up-right"></i></div>
@@ -87,8 +87,8 @@ const TransactionsComponent = {
             </div>
           </div>
 
-          <div class="col-sm-6 col-xl-4">
-            <div class="kpi-card">
+          <div class="col-12 col-sm-6 col-xl-4">
+            <div class="kpi-card h-100">
               <div class="kpi-header">
                 <span class="kpi-title">Net Operating Cash Flow</span>
                 <div class="kpi-icon-box icon-blue"><i class="bi bi-wallet2"></i></div>
@@ -104,14 +104,14 @@ const TransactionsComponent = {
       <div class="erp-card mb-3">
         <div class="erp-card-body p-3">
           <div class="row g-2 align-items-center">
-            <div class="col-md-6 col-lg-5">
+            <div class="col-12 col-md-5 col-lg-4">
               <div class="input-group input-group-sm">
                 <span class="input-group-text bg-light"><i class="bi bi-search"></i></span>
                 <input type="text" id="txn-search" class="form-control" placeholder="${isCustomer ? 'Search by txn #, ref #, notes...' : 'Search by txn #, ref #, category, notes...'}" oninput="TransactionsComponent.filterList()">
               </div>
             </div>
             ${!isCustomer ? `
-              <div class="col-md-3 col-lg-3">
+              <div class="col-12 col-sm-6 col-md-3">
                 <select id="txn-type-filter" class="form-select form-select-sm" onchange="TransactionsComponent.filterList()">
                   <option value="">All Types (Income & Expense)</option>
                   <option value="Income">Income Only</option>
@@ -119,7 +119,7 @@ const TransactionsComponent = {
                 </select>
               </div>
             ` : ''}
-            <div class="col-auto ms-auto text-muted small">
+            <div class="col-12 col-sm-auto ms-sm-auto text-muted small text-sm-end mt-2 mt-sm-0">
               Total: <strong id="txn-total-count">${this.filteredData.length}</strong> entries
             </div>
           </div>
@@ -128,8 +128,8 @@ const TransactionsComponent = {
 
       <!-- Table -->
       <div class="erp-card">
-        <div class="erp-table-wrapper">
-          <table class="erp-table" id="transactions-table">
+        <div class="table-responsive erp-table-wrapper">
+          <table class="erp-table align-middle" id="transactions-table" style="min-width: 820px;">
             <thead>
               <tr>
                 ${isCustomer ? `
@@ -171,60 +171,58 @@ const TransactionsComponent = {
         </div>
       </div>
 
-      <!-- New Manual Transaction Modal -->
+      <!-- New Transaction Modal (Dynamically Available) -->
       <div class="modal fade" id="newTxnModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
           <div class="modal-content border-0 shadow">
             <div class="modal-header">
-              <h5 class="modal-title fw-bold"><i class="bi bi-journal-plus me-2 text-primary"></i>Record Ledger Entry</h5>
+              <h5 class="modal-title fw-bold"><i class="bi bi-wallet2 text-primary me-2"></i>Record Transaction / Expense</h5>
               <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <form id="new-txn-form" onsubmit="TransactionsComponent.submitNewTxn(event)">
               <div class="modal-body">
-                <div class="row mb-3">
-                  <div class="col-md-6 mb-3 mb-md-0">
+                <div class="row g-3 mb-3">
+                  <div class="col-12 col-sm-6">
                     <label class="form-label" for="nt-type">Transaction Type <span class="required-asterisk">*</span></label>
                     <select id="nt-type" class="form-select" required>
-                      <option value="Expense">Expense (Outflow)</option>
-                      <option value="Income">Income (Inflow)</option>
+                      <option value="Expense">Expense</option>
+                      <option value="Income">Income</option>
                     </select>
                   </div>
-                  <div class="col-md-6">
-                    <label class="form-label" for="nt-category">Category <span class="required-asterisk">*</span></label>
-                    <input type="text" id="nt-category" class="form-control" placeholder="e.g. Office Rent, Utilities, Courier" required>
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <div class="col-md-6 mb-3 mb-md-0">
+                  <div class="col-12 col-sm-6">
                     <label class="form-label" for="nt-amount">Amount (₹) <span class="required-asterisk">*</span></label>
                     <input type="number" step="0.01" min="0.01" id="nt-amount" class="form-control" placeholder="0.00" required>
                   </div>
-                  <div class="col-md-6">
-                    <label class="form-label" for="nt-method">Payment Method</label>
-                    <select id="nt-method" class="form-select">
+                </div>
+                <div class="row g-3 mb-3">
+                  <div class="col-12 col-sm-6">
+                    <label class="form-label" for="nt-category">Category <span class="required-asterisk">*</span></label>
+                    <input type="text" id="nt-category" class="form-control" placeholder="e.g. Office Supplies, Shipping" required>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <label class="form-label" for="nt-method">Payment Method <span class="required-asterisk">*</span></label>
+                    <select id="nt-method" class="form-select" required>
                       <option value="Bank Transfer">Bank Transfer</option>
                       <option value="Credit Card">Credit Card</option>
                       <option value="Cash">Cash</option>
                       <option value="Cheque">Cheque</option>
+                      <option value="UPI">UPI / Digital</option>
                     </select>
                   </div>
                 </div>
-
                 <div class="mb-3">
-                  <label class="form-label" for="nt-ref">Reference Code / Document #</label>
-                  <input type="text" id="nt-ref" class="form-control" placeholder="e.g. BILL-2026-088">
+                  <label class="form-label" for="nt-ref">Reference Number</label>
+                  <input type="text" id="nt-ref" class="form-control font-monospace" placeholder="e.g. INV-2024-001 or CHQ-9923">
                 </div>
-
                 <div class="mb-2">
-                  <label class="form-label" for="nt-notes">Description / Memo</label>
-                  <textarea id="nt-notes" class="form-control" rows="2" placeholder="Details of this expenditure or income..."></textarea>
+                  <label class="form-label" for="nt-notes">Notes / Memo</label>
+                  <textarea id="nt-notes" class="form-control" rows="2" placeholder="Describe purpose or vendor information..."></textarea>
                 </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-erp-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
                 <button type="submit" class="btn btn-erp-primary btn-sm" id="btn-save-nt">
-                  <i class="bi bi-check2 me-1"></i>Save Entry
+                  <i class="bi bi-check2-circle me-1"></i>Save Entry
                 </button>
               </div>
             </form>
@@ -371,20 +369,20 @@ const TransactionsComponent = {
       const isIncome = txn.type === 'Income';
 
       container.innerHTML = `
-        <div class="page-header-container d-print-none">
+        <div class="page-header-container d-print-none d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
           <div>
             <h1 class="page-title">${isCustomer ? 'Payment Receipt' : 'Transaction Details'} ${txn.transactionNumber}</h1>
             <p class="page-subtitle">${isIncome ? 'Payment confirmation & settled ledger entry' : 'Audited general ledger expenditure'}</p>
           </div>
-          <div>
-            <a href="#transactions" class="btn btn-erp-secondary btn-sm me-2">
+          <div class="d-flex flex-wrap gap-2">
+            <a href="#transactions" class="btn btn-erp-secondary btn-sm">
               <i class="bi bi-arrow-left me-1"></i>Back to List
             </a>
-            <button type="button" class="btn btn-outline-secondary btn-sm me-2" onclick="window.print()">
+            <button type="button" class="btn btn-outline-secondary btn-sm" onclick="window.print()">
               <i class="bi bi-printer me-1"></i>Print / PDF
             </button>
             ${matchingInvoice ? `
-              <a href="#invoices/view/${matchingInvoice.invoiceId}" class="btn btn-outline-primary btn-sm me-2">
+              <a href="#invoices/view/${matchingInvoice.invoiceId}" class="btn btn-outline-primary btn-sm">
                 <i class="bi bi-receipt me-1"></i>View Invoice #${matchingInvoice.invoiceNumber}
               </a>
               ${matchingInvoice.balanceAmount > 0 ? `
@@ -397,15 +395,15 @@ const TransactionsComponent = {
         </div>
 
         <!-- Printable Payment Receipt Card -->
-        <div class="erp-card p-4 p-md-5">
-          <div class="d-flex justify-content-between align-items-start border-bottom pb-4 mb-4">
+        <div class="erp-card p-3 p-md-5">
+          <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start border-bottom pb-4 mb-4 gap-3">
             <div>
               <h2 class="fw-bold text-primary mb-1"><i class="bi bi-boxes me-2"></i>ApexERP</h2>
               <div class="text-muted small">Apex Enterprise Solutions Inc.</div>
               <div class="text-muted small">100 Enterprise Way, Suite 400</div>
               <div class="text-muted small">contact@erp.com &bull; +1 (800) 555-0199</div>
             </div>
-            <div class="text-end">
+            <div class="text-sm-end">
               <h3 class="fw-bold text-dark mb-1">${isIncome ? 'PAYMENT RECEIPT' : 'TRANSACTION VOUCHER'}</h3>
               <div class="font-monospace fw-semibold text-primary fs-6">${txn.transactionNumber}</div>
               <div class="text-muted small mt-1">Status: <span class="badge-status badge-completed">${txn.status}</span></div>
@@ -413,15 +411,15 @@ const TransactionsComponent = {
           </div>
 
           <!-- Metadata Section -->
-          <div class="row mb-4">
-            <div class="col-sm-6 mb-3 mb-sm-0">
+          <div class="row g-3 mb-4">
+            <div class="col-12 col-sm-6">
               <h6 class="text-muted text-uppercase small fw-bold mb-2">${isIncome ? 'Payment For / Account:' : 'Expenditure Account:'}</h6>
               <div class="fw-bold text-dark fs-6">${matchingInvoice?.customerName || (isCustomer ? Auth.getUser()?.fullName : 'Apex General Ledger')}</div>
               ${txn.referenceNumber ? `<div class="text-muted small mt-1">Reference Document: <strong>${txn.referenceNumber}</strong></div>` : ''}
               ${matchingInvoice?.saleOrderNumber ? `<div class="text-muted small">Sales Order Reference: <strong>${matchingInvoice.saleOrderNumber}</strong></div>` : ''}
               ${!isCustomer ? `<div class="text-muted small">Recorded By: <strong>${txn.createdBy || 'System'}</strong></div>` : ''}
             </div>
-            <div class="col-sm-6 text-sm-end">
+            <div class="col-12 col-sm-6 text-sm-end">
               <div class="mb-1"><span class="text-muted small">Payment Date:</span> <strong>${App.formatDate(txn.transactionDate)}</strong></div>
               <div class="mb-1"><span class="text-muted small">Processing Time:</span> <strong>${App.formatTime(txn.transactionDate)}</strong></div>
               <div class="mb-1"><span class="text-muted small">Payment Method:</span> <span class="badge bg-light text-dark border ms-1">${txn.paymentMethod || 'Bank Transfer'}</span></div>
@@ -430,8 +428,8 @@ const TransactionsComponent = {
           </div>
 
           <!-- Settlement Summary Table -->
-          <div class="erp-table-wrapper mb-4">
-            <table class="erp-table">
+          <div class="table-responsive erp-table-wrapper mb-4">
+            <table class="erp-table align-middle" style="min-width: 580px;">
               <thead>
                 <tr>
                   <th style="min-width: 140px;">Transaction #</th>
@@ -470,8 +468,8 @@ const TransactionsComponent = {
           ${matchingInvoice ? `
             <div class="erp-card mb-4 border bg-light">
               <div class="erp-card-body p-3">
-                <div class="row align-items-center">
-                  <div class="col-md-6 mb-2 mb-md-0">
+                <div class="row g-2 align-items-center">
+                  <div class="col-12 col-md-6 mb-2 mb-md-0">
                     <div class="d-flex align-items-center">
                       <i class="bi bi-receipt fs-3 text-primary me-3"></i>
                       <div>
@@ -480,7 +478,7 @@ const TransactionsComponent = {
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-6 text-md-end">
+                  <div class="col-12 col-md-6 text-md-end">
                     <span class="badge-status badge-${matchingInvoice.status.toLowerCase()} me-2">${matchingInvoice.status}</span>
                     <span class="small me-2">Remaining Balance: <strong class="${matchingInvoice.balanceAmount > 0 ? 'text-danger' : 'text-success'}">${App.formatCurrency(matchingInvoice.balanceAmount)}</strong></span>
                     <a href="#invoices/view/${matchingInvoice.invoiceId}" class="btn btn-outline-primary btn-sm">

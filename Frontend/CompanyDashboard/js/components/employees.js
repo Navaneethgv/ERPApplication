@@ -71,7 +71,7 @@ const EmployeesComponent = {
     const pageItems = this.filteredData.slice(start, start + this.pageSize);
 
     container.innerHTML = `
-      <div class="page-header-container">
+      <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
         <div>
           <h1 class="page-title">Employee Management</h1>
           <p class="page-subtitle">Manage organizational staff, roles, departments, and payroll access</p>
@@ -89,26 +89,26 @@ const EmployeesComponent = {
       <div class="erp-card mb-3">
         <div class="erp-card-body p-3">
           <div class="row g-2 align-items-center">
-            <div class="col-md-6 col-lg-4">
+            <div class="col-12 col-md-5 col-lg-4">
               <div class="input-group input-group-sm">
                 <span class="input-group-text bg-light"><i class="bi bi-search"></i></span>
                 <input type="text" id="emp-search" class="form-control" placeholder="Search by name, email, designation..." oninput="EmployeesComponent.filterList()">
               </div>
             </div>
-            <div class="col-md-4 col-lg-3">
+            <div class="col-12 col-sm-6 col-md-3">
               <select id="emp-dept-filter" class="form-select form-select-sm" onchange="EmployeesComponent.filterList()">
                 <option value="">All Departments</option>
                 ${departments.map(d => `<option value="${d}">${d}</option>`).join('')}
               </select>
             </div>
-            <div class="col-md-2 col-lg-2">
+            <div class="col-12 col-sm-6 col-md-2">
               <select id="emp-status-filter" class="form-select form-select-sm" onchange="EmployeesComponent.filterList()">
                 <option value="">All Statuses</option>
                 <option value="Active">Active</option>
                 <option value="Inactive">Inactive</option>
               </select>
             </div>
-            <div class="col-auto ms-auto text-muted small">
+            <div class="col-12 col-sm-auto ms-sm-auto text-muted small text-sm-end mt-2 mt-sm-0">
               Total: <strong id="emp-total-count">${this.filteredData.length}</strong> staff
             </div>
           </div>
@@ -117,8 +117,8 @@ const EmployeesComponent = {
 
       <!-- Employee Table -->
       <div class="erp-card">
-        <div class="erp-table-wrapper">
-          <table class="erp-table" id="employees-table">
+        <div class="table-responsive erp-table-wrapper">
+          <table class="erp-table align-middle" id="employees-table" style="min-width: 780px;">
             <thead>
               <tr>
                 <th>ID</th>
@@ -244,7 +244,7 @@ const EmployeesComponent = {
   renderForm(container, emp) {
     const isEdit = !!emp;
     container.innerHTML = `
-      <div class="page-header-container">
+      <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
         <div>
           <h1 class="page-title">${isEdit ? 'Edit Employee' : 'Add New Employee'}</h1>
           <p class="page-subtitle">${isEdit ? `Updating profile for ${emp.fullName}` : 'Register a new team member and assign access'}</p>
@@ -257,27 +257,27 @@ const EmployeesComponent = {
       </div>
 
       <div class="erp-card">
-        <div class="erp-card-body p-4">
+        <div class="erp-card-body p-3 p-md-4">
           <form id="employee-form" onsubmit="EmployeesComponent.submitForm(event, ${isEdit ? emp.employeeId : 'null'})">
             <div class="form-section-title"><i class="bi bi-person-badge me-2"></i>Personal & Contact Information</div>
             
-            <div class="row mb-3">
-              <div class="col-md-6 mb-3 mb-md-0">
+            <div class="row g-3 mb-3">
+              <div class="col-12 col-md-6">
                 <label class="form-label" for="emp-first-name">First Name <span class="required-asterisk">*</span></label>
                 <input type="text" id="emp-first-name" class="form-control" value="${emp?.firstName || ''}" required>
               </div>
-              <div class="col-md-6">
+              <div class="col-12 col-md-6">
                 <label class="form-label" for="emp-last-name">Last Name <span class="required-asterisk">*</span></label>
                 <input type="text" id="emp-last-name" class="form-control" value="${emp?.lastName || ''}" required>
               </div>
             </div>
 
-            <div class="row mb-4">
-              <div class="col-md-6 mb-3 mb-md-0">
+            <div class="row g-3 mb-4">
+              <div class="col-12 col-md-6">
                 <label class="form-label" for="emp-email">Email Address <span class="required-asterisk">*</span></label>
                 <input type="email" id="emp-email" class="form-control" value="${emp?.email || ''}" required>
               </div>
-              <div class="col-md-6">
+              <div class="col-12 col-md-6">
                 <label class="form-label" for="emp-phone">Phone Number</label>
                 <input type="tel" id="emp-phone" class="form-control" value="${emp?.phone || ''}">
               </div>
@@ -285,8 +285,8 @@ const EmployeesComponent = {
 
             <div class="form-section-title"><i class="bi bi-briefcase me-2"></i>Department & Compensation</div>
 
-            <div class="row mb-3">
-              <div class="col-md-6 mb-3 mb-md-0">
+            <div class="row g-3 mb-3">
+              <div class="col-12 col-md-6">
                 <label class="form-label" for="emp-department">Department <span class="required-asterisk">*</span></label>
                 <select id="emp-department" class="form-select" required>
                   <option value="">Select Department</option>
@@ -298,22 +298,22 @@ const EmployeesComponent = {
                   <option value="Human Resources" ${emp?.department === 'Human Resources' ? 'selected' : ''}>Human Resources</option>
                 </select>
               </div>
-              <div class="col-md-6">
+              <div class="col-12 col-md-6">
                 <label class="form-label" for="emp-designation">Job Title / Designation <span class="required-asterisk">*</span></label>
                 <input type="text" id="emp-designation" class="form-control" placeholder="e.g. Operations Specialist" value="${emp?.designation || ''}" required>
               </div>
             </div>
 
-            <div class="row mb-4">
-              <div class="col-md-4 mb-3 mb-md-0">
+            <div class="row g-3 mb-4">
+              <div class="col-12 col-md-4">
                 <label class="form-label" for="emp-salary">Annual Salary (₹) <span class="required-asterisk">*</span></label>
                 <input type="number" step="0.01" min="0" id="emp-salary" class="form-control" value="${emp?.salary || 0}" required>
               </div>
-              <div class="col-md-4 mb-3 mb-md-0">
+              <div class="col-12 col-sm-6 col-md-4">
                 <label class="form-label" for="emp-joining-date">Joining Date <span class="required-asterisk">*</span></label>
                 <input type="date" id="emp-joining-date" class="form-control" value="${emp ? emp.joiningDate.slice(0, 10) : new Date().toISOString().slice(0, 10)}" required>
               </div>
-              <div class="col-md-4">
+              <div class="col-12 col-sm-6 col-md-4">
                 <label class="form-label" for="emp-status">Employment Status <span class="required-asterisk">*</span></label>
                 <select id="emp-status" class="form-select" required>
                   <option value="Active" ${emp?.status === 'Active' ? 'selected' : ''}>Active</option>
@@ -324,8 +324,8 @@ const EmployeesComponent = {
 
             ${!isEdit ? `
               <div class="form-section-title"><i class="bi bi-shield-lock me-2"></i>ERP Login Credentials</div>
-              <div class="row mb-4">
-                <div class="col-12 mb-2">
+              <div class="row g-3 mb-4">
+                <div class="col-12">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="emp-create-login" onchange="document.getElementById('emp-password-row').style.display = this.checked ? 'block' : 'none'">
                     <label class="form-check-label fw-semibold" for="emp-create-login">
@@ -333,14 +333,14 @@ const EmployeesComponent = {
                     </label>
                   </div>
                 </div>
-                <div class="col-md-6" id="emp-password-row" style="display: none;">
+                <div class="col-12 col-md-6" id="emp-password-row" style="display: none;">
                   <label class="form-label" for="emp-password">Initial Password <span class="required-asterisk">*</span></label>
                   <input type="password" id="emp-password" class="form-control" placeholder="Minimum 6 characters">
                 </div>
               </div>
             ` : ''}
 
-            <div class="d-flex justify-content-end gap-2 border-top pt-3">
+            <div class="d-flex flex-column-reverse flex-sm-row justify-content-end gap-2 border-top pt-3">
               <a href="#employees" class="btn btn-erp-secondary">Cancel</a>
               <button type="submit" class="btn btn-erp-primary" id="btn-save-emp">
                 <i class="bi bi-check2 me-1"></i>${isEdit ? 'Save Changes' : 'Create Employee'}

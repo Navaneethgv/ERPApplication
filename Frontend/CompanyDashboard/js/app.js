@@ -27,6 +27,19 @@ const App = {
     } else {
       this.initUnauthenticatedUI();
     }
+
+    // Responsive window resize & escape key handler for mobile drawer
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 992) {
+        this.closeMobileSidebar();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        this.closeMobileSidebar();
+      }
+    });
   },
 
   initAuthenticatedUI() {
@@ -313,13 +326,13 @@ const App = {
     }).join('');
 
     return `
-      <div class="erp-pagination-wrapper">
-        <div class="erp-pagination-info">
-          Showing <span class="fw-semibold mx-1">${startItem}</span> to <span class="fw-semibold mx-1">${endItem}</span> of <span class="fw-semibold mx-1">${totalItems}</span> entries
+      <div class="erp-pagination-wrapper d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 px-3 py-2 border-top bg-white">
+        <div class="erp-pagination-info text-muted small text-center text-md-start">
+          Showing <span class="fw-semibold text-dark mx-1">${startItem}</span> to <span class="fw-semibold text-dark mx-1">${endItem}</span> of <span class="fw-semibold text-dark mx-1">${totalItems}</span> entries
         </div>
-        <div class="erp-pagination-controls">
-          <div class="erp-page-size-wrapper">
-            <span class="erp-page-size-label">Show:</span>
+        <div class="erp-pagination-controls d-flex flex-wrap align-items-center justify-content-center gap-2">
+          <div class="erp-page-size-wrapper d-inline-flex align-items-center gap-1">
+            <span class="erp-page-size-label small text-muted">Show:</span>
             <select class="form-select form-select-sm erp-page-size-select" aria-label="Entries per page" onchange="${componentName}.changePageSize(Number(this.value))">
               <option value="5" ${pageSize === 5 ? 'selected' : ''}>5</option>
               <option value="10" ${pageSize === 10 ? 'selected' : ''}>10</option>

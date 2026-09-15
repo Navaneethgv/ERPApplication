@@ -67,7 +67,7 @@ const SuppliersComponent = {
     const pageItems = this.filteredData.slice(start, start + this.pageSize);
 
     container.innerHTML = `
-      <div class="page-header-container">
+      <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
         <div>
           <h1 class="page-title">Supplier Management</h1>
           <p class="page-subtitle">Manage vendors, procurement contacts, and payment terms</p>
@@ -85,20 +85,20 @@ const SuppliersComponent = {
       <div class="erp-card mb-3">
         <div class="erp-card-body p-3">
           <div class="row g-2 align-items-center">
-            <div class="col-md-6 col-lg-5">
+            <div class="col-12 col-md-5 col-lg-4">
               <div class="input-group input-group-sm">
                 <span class="input-group-text bg-light"><i class="bi bi-search"></i></span>
                 <input type="text" id="supp-search" class="form-control" placeholder="Search by vendor code, name, email, contact..." oninput="SuppliersComponent.filterList()">
               </div>
             </div>
-            <div class="col-md-3 col-lg-3">
+            <div class="col-12 col-sm-6 col-md-3">
               <select id="supp-status-filter" class="form-select form-select-sm" onchange="SuppliersComponent.filterList()">
                 <option value="">All Statuses</option>
                 <option value="Active">Active</option>
                 <option value="Inactive">Inactive</option>
               </select>
             </div>
-            <div class="col-auto ms-auto text-muted small">
+            <div class="col-12 col-sm-auto ms-sm-auto text-muted small text-sm-end mt-2 mt-sm-0">
               Total: <strong id="supp-total-count">${this.filteredData.length}</strong> suppliers
             </div>
           </div>
@@ -107,8 +107,8 @@ const SuppliersComponent = {
 
       <!-- Suppliers Table -->
       <div class="erp-card">
-        <div class="erp-table-wrapper">
-          <table class="erp-table" id="suppliers-table">
+        <div class="table-responsive erp-table-wrapper">
+          <table class="erp-table align-middle" id="suppliers-table" style="min-width: 720px;">
             <thead>
               <tr>
                 <th>Code</th>
@@ -227,7 +227,7 @@ const SuppliersComponent = {
   renderForm(container, supp) {
     const isEdit = !!supp;
     container.innerHTML = `
-      <div class="page-header-container">
+      <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
         <div>
           <h1 class="page-title">${isEdit ? 'Edit Supplier' : 'Add New Supplier'}</h1>
           <p class="page-subtitle">${isEdit ? `Update profile for ${supp.name}` : 'Register a new vendor for procurement'}</p>
@@ -240,42 +240,42 @@ const SuppliersComponent = {
       </div>
 
       <div class="erp-card">
-        <div class="erp-card-body p-4">
+        <div class="erp-card-body p-3 p-md-4">
           <form id="supplier-form" onsubmit="SuppliersComponent.submitForm(event, ${isEdit ? supp.supplierId : 'null'})">
             <div class="form-section-title"><i class="bi bi-truck me-2"></i>Vendor Information</div>
 
-            <div class="row mb-3">
-              <div class="col-md-4 mb-3 mb-md-0">
+            <div class="row g-3 mb-3">
+              <div class="col-12 col-md-4">
                 <label class="form-label" for="supp-code">Supplier Code <span class="required-asterisk">*</span></label>
                 <input type="text" id="supp-code" class="form-control font-monospace" value="${supp?.supplierCode || ''}" placeholder="e.g. SUP-TECH-04" required>
               </div>
-              <div class="col-md-8">
+              <div class="col-12 col-md-8">
                 <label class="form-label" for="supp-name">Supplier / Vendor Name <span class="required-asterisk">*</span></label>
                 <input type="text" id="supp-name" class="form-control" value="${supp?.name || ''}" placeholder="e.g. Pacific Electronics Direct" required>
               </div>
             </div>
 
-            <div class="row mb-3">
-              <div class="col-md-4 mb-3 mb-md-0">
+            <div class="row g-3 mb-3">
+              <div class="col-12 col-md-4">
                 <label class="form-label" for="supp-contact">Contact Person</label>
                 <input type="text" id="supp-contact" class="form-control" value="${supp?.contactPerson || ''}" placeholder="e.g. David Miller">
               </div>
-              <div class="col-md-4 mb-3 mb-md-0">
+              <div class="col-12 col-sm-6 col-md-4">
                 <label class="form-label" for="supp-email">Email Address <span class="required-asterisk">*</span></label>
                 <input type="email" id="supp-email" class="form-control" value="${supp?.email || ''}" required>
               </div>
-              <div class="col-md-4">
+              <div class="col-12 col-sm-6 col-md-4">
                 <label class="form-label" for="supp-phone">Phone Number <span class="required-asterisk">*</span></label>
                 <input type="tel" id="supp-phone" class="form-control" value="${supp?.phone || ''}" required>
               </div>
             </div>
 
-            <div class="row mb-4">
-              <div class="col-md-6 mb-3 mb-md-0">
+            <div class="row g-3 mb-4">
+              <div class="col-12 col-md-6">
                 <label class="form-label" for="supp-address">Address</label>
                 <input type="text" id="supp-address" class="form-control" value="${supp?.address || ''}" placeholder="Street, City, State">
               </div>
-              <div class="col-md-3 mb-3 mb-md-0">
+              <div class="col-12 col-sm-6 col-md-3">
                 <label class="form-label" for="supp-terms">Payment Terms <span class="required-asterisk">*</span></label>
                 <select id="supp-terms" class="form-select" required>
                   <option value="Net 15" ${supp?.paymentTerms === 'Net 15' ? 'selected' : ''}>Net 15</option>
@@ -284,7 +284,7 @@ const SuppliersComponent = {
                   <option value="Due on Receipt" ${supp?.paymentTerms === 'Due on Receipt' ? 'selected' : ''}>Due on Receipt</option>
                 </select>
               </div>
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-md-3">
                 <label class="form-label" for="supp-status">Status <span class="required-asterisk">*</span></label>
                 <select id="supp-status" class="form-select" required>
                   <option value="Active" ${supp?.status === 'Active' ? 'selected' : ''}>Active</option>
@@ -293,7 +293,7 @@ const SuppliersComponent = {
               </div>
             </div>
 
-            <div class="d-flex justify-content-end gap-2 border-top pt-3">
+            <div class="d-flex flex-column-reverse flex-sm-row justify-content-end gap-2 border-top pt-3">
               <a href="#suppliers" class="btn btn-erp-secondary">Cancel</a>
               <button type="submit" class="btn btn-erp-primary" id="btn-save-supp">
                 <i class="bi bi-check2 me-1"></i>${isEdit ? 'Save Changes' : 'Create Supplier'}

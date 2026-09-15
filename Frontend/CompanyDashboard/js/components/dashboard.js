@@ -32,7 +32,7 @@ const DashboardComponent = {
 
   renderAdmin(container, data) {
     container.innerHTML = `
-      <div class="page-header-container">
+      <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
         <div>
           <h1 class="page-title">Executive Dashboard</h1>
           <p class="page-subtitle">High-level enterprise performance metrics and real-time ledger</p>
@@ -44,8 +44,8 @@ const DashboardComponent = {
 
       <!-- KPI Cards Row 1 -->
       <div class="row g-3 mb-4">
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Total Employees</span>
               <div class="kpi-icon-box icon-purple"><i class="bi bi-people-fill"></i></div>
@@ -55,8 +55,8 @@ const DashboardComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Active Customers</span>
               <div class="kpi-icon-box icon-blue"><i class="bi bi-building"></i></div>
@@ -66,8 +66,8 @@ const DashboardComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Catalog Products</span>
               <div class="kpi-icon-box icon-teal"><i class="bi bi-boxes"></i></div>
@@ -77,8 +77,8 @@ const DashboardComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Low Stock Items</span>
               <div class="kpi-icon-box icon-rose"><i class="bi bi-exclamation-triangle-fill"></i></div>
@@ -91,8 +91,8 @@ const DashboardComponent = {
 
       <!-- KPI Cards Row 2 (Financials) -->
       <div class="row g-3 mb-4">
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Total Sales Volume</span>
               <div class="kpi-icon-box icon-green"><i class="bi bi-cart-check-fill"></i></div>
@@ -102,8 +102,8 @@ const DashboardComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Total Purchases</span>
               <div class="kpi-icon-box icon-amber"><i class="bi bi-bag-dash-fill"></i></div>
@@ -113,8 +113,8 @@ const DashboardComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Realized Revenue</span>
               <div class="kpi-icon-box icon-blue"><i class="bi bi-cash-stack"></i></div>
@@ -124,8 +124,8 @@ const DashboardComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Pending Receivables</span>
               <div class="kpi-icon-box icon-purple"><i class="bi bi-clock-history"></i></div>
@@ -138,7 +138,7 @@ const DashboardComponent = {
 
       <!-- Charts Row -->
       <div class="row g-3 mb-4">
-        <div class="col-lg-8">
+        <div class="col-12 col-lg-8">
           <div class="erp-card h-100">
             <div class="erp-card-header">
               <h6 class="erp-card-title"><i class="bi bi-bar-chart-line me-2 text-primary"></i>Sales vs Purchases (Last 6 Months)</h6>
@@ -149,7 +149,7 @@ const DashboardComponent = {
           </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-12 col-lg-4">
           <div class="erp-card h-100">
             <div class="erp-card-header">
               <h6 class="erp-card-title"><i class="bi bi-pie-chart me-2 text-primary"></i>Inventory Status</h6>
@@ -165,7 +165,7 @@ const DashboardComponent = {
 
       <!-- Charts Row 2 -->
       <div class="row g-3 mb-4">
-        <div class="col-lg-6">
+        <div class="col-12 col-lg-6">
           <div class="erp-card h-100">
             <div class="erp-card-header">
               <h6 class="erp-card-title"><i class="bi bi-graph-up me-2 text-success"></i>Revenue Growth Trend</h6>
@@ -176,7 +176,7 @@ const DashboardComponent = {
           </div>
         </div>
 
-        <div class="col-lg-6">
+        <div class="col-12 col-lg-6">
           <div class="erp-card h-100">
             <div class="erp-card-header">
               <h6 class="erp-card-title"><i class="bi bi-diagram-3 me-2 text-info"></i>Product Category Distribution</h6>
@@ -193,14 +193,14 @@ const DashboardComponent = {
       <!-- Tables Row -->
       <div class="row g-3">
         <!-- Recent Transactions -->
-        <div class="col-lg-7">
-          <div class="erp-card">
+        <div class="col-12 col-lg-7">
+          <div class="erp-card mb-0">
             <div class="erp-card-header">
               <h6 class="erp-card-title"><i class="bi bi-journal-text me-2 text-primary"></i>Recent Financial Ledger</h6>
               <a href="#transactions" class="btn btn-outline-secondary btn-sm py-0 px-2">View All</a>
             </div>
-            <div class="erp-table-wrapper">
-              <table class="erp-table">
+            <div class="erp-table-wrapper table-responsive">
+              <table class="erp-table table-compact">
                 <thead>
                   <tr>
                     <th>Ref #</th>
@@ -213,7 +213,7 @@ const DashboardComponent = {
                 <tbody>
                   ${(data.recentTransactions || []).map(t => `
                     <tr>
-                      <td class="fw-semibold">${t.referenceNumber || t.transactionNumber}</td>
+                      <td class="fw-semibold font-monospace">${t.referenceNumber || t.transactionNumber}</td>
                       <td><span class="badge-status ${t.type === 'Income' ? 'badge-completed' : 'badge-lowstock'}">${t.type}</span></td>
                       <td>${t.category}</td>
                       <td class="fw-bold ${t.type === 'Income' ? 'text-success' : 'text-danger'}">
@@ -229,14 +229,14 @@ const DashboardComponent = {
         </div>
 
         <!-- Critical Low Stock Alerts -->
-        <div class="col-lg-5">
-          <div class="erp-card">
+        <div class="col-12 col-lg-5">
+          <div class="erp-card mb-0">
             <div class="erp-card-header">
               <h6 class="erp-card-title text-danger"><i class="bi bi-exclamation-triangle me-2"></i>Critical Low Stock</h6>
               <a href="#inventory" class="btn btn-outline-danger btn-sm py-0 px-2">Inventory</a>
             </div>
-            <div class="erp-table-wrapper">
-              <table class="erp-table">
+            <div class="erp-table-wrapper table-responsive">
+              <table class="erp-table table-compact">
                 <thead>
                   <tr>
                     <th>SKU / Product</th>
@@ -250,12 +250,12 @@ const DashboardComponent = {
                     <tr>
                       <td>
                         <div class="fw-semibold">${p.name}</div>
-                        <div class="small text-muted">${p.sku}</div>
+                        <div class="small text-muted font-monospace">${p.sku}</div>
                       </td>
                       <td><span class="badge bg-danger">${p.quantityOnHand}</span></td>
                       <td>${p.reorderLevel}</td>
                       <td>
-                        <a href="#purchases/new" class="btn btn-outline-primary btn-sm py-0 px-1" title="Order Stock">
+                        <a href="#purchases/new" class="btn btn-outline-primary btn-sm py-0 px-2" title="Order Stock">
                           <i class="bi bi-plus-circle"></i> Restock
                         </a>
                       </td>
@@ -377,21 +377,21 @@ const DashboardComponent = {
   renderEmployee(container, data) {
     const profile = data.profile || {};
     container.innerHTML = `
-      <div class="page-header-container">
+      <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
         <div>
           <h1 class="page-title">Operations Portal</h1>
           <p class="page-subtitle">Welcome, <strong>${profile.fullName || 'Team Member'}</strong> &bull; ${data.department} &bull; ${data.designation}</p>
         </div>
-        <div>
-          <a href="#sales/new" class="btn btn-erp-primary btn-sm me-2"><i class="bi bi-cart-plus me-1"></i>New Sale</a>
+        <div class="d-flex flex-wrap gap-2">
+          <a href="#sales/new" class="btn btn-erp-primary btn-sm"><i class="bi bi-cart-plus me-1"></i>New Sale</a>
           <a href="#purchases/new" class="btn btn-outline-primary btn-sm"><i class="bi bi-bag-plus me-1"></i>New Purchase</a>
         </div>
       </div>
 
       <!-- Employee KPI Cards -->
       <div class="row g-3 mb-4">
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Sales Orders</span>
               <div class="kpi-icon-box icon-blue"><i class="bi bi-cart-check"></i></div>
@@ -401,8 +401,8 @@ const DashboardComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Pending Orders</span>
               <div class="kpi-icon-box icon-amber"><i class="bi bi-hourglass-split"></i></div>
@@ -412,8 +412,8 @@ const DashboardComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Sales Volume</span>
               <div class="kpi-icon-box icon-green"><i class="bi bi-cash"></i></div>
@@ -423,8 +423,8 @@ const DashboardComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Low Stock Alerts</span>
               <div class="kpi-icon-box icon-rose"><i class="bi bi-bell-fill"></i></div>
@@ -437,7 +437,7 @@ const DashboardComponent = {
 
       <!-- Charts -->
       <div class="row g-3 mb-4">
-        <div class="col-lg-8">
+        <div class="col-12 col-lg-8">
           <div class="erp-card h-100">
             <div class="erp-card-header">
               <h6 class="erp-card-title"><i class="bi bi-bar-chart me-2 text-primary"></i>Operational Performance Trend</h6>
@@ -448,7 +448,7 @@ const DashboardComponent = {
           </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-12 col-lg-4">
           <div class="erp-card h-100">
             <div class="erp-card-header">
               <h6 class="erp-card-title"><i class="bi bi-pie-chart me-2 text-info"></i>Sales Order Status</h6>
@@ -464,14 +464,14 @@ const DashboardComponent = {
 
       <!-- Recent Tables -->
       <div class="row g-3">
-        <div class="col-lg-6">
-          <div class="erp-card">
+        <div class="col-12 col-lg-6">
+          <div class="erp-card mb-0">
             <div class="erp-card-header">
               <h6 class="erp-card-title"><i class="bi bi-cart me-2 text-primary"></i>Recent Sales Orders</h6>
               <a href="#sales" class="btn btn-outline-secondary btn-sm py-0 px-2">View All</a>
             </div>
-            <div class="erp-table-wrapper">
-              <table class="erp-table">
+            <div class="erp-table-wrapper table-responsive">
+              <table class="erp-table table-compact">
                 <thead>
                   <tr>
                     <th>Order #</th>
@@ -483,9 +483,9 @@ const DashboardComponent = {
                 <tbody>
                   ${(data.recentSales || []).map(s => `
                     <tr>
-                      <td class="fw-semibold"><a href="#sales/view/${s.saleId}">${s.saleOrderNumber}</a></td>
+                      <td class="fw-semibold font-monospace"><a href="#sales/view/${s.saleId}">${s.saleOrderNumber}</a></td>
                       <td>${s.customerName}</td>
-                      <td class="fw-bold">${App.formatCurrency(s.totalAmount)}</td>
+                      <td class="fw-bold text-success">${App.formatCurrency(s.totalAmount)}</td>
                       <td><span class="badge-status badge-${s.status.toLowerCase()}">${s.status}</span></td>
                     </tr>
                   `).join('') || '<tr><td colspan="4" class="text-center text-muted">No sales orders found.</td></tr>'}
@@ -495,14 +495,14 @@ const DashboardComponent = {
           </div>
         </div>
 
-        <div class="col-lg-6">
-          <div class="erp-card">
+        <div class="col-12 col-lg-6">
+          <div class="erp-card mb-0">
             <div class="erp-card-header">
               <h6 class="erp-card-title"><i class="bi bi-bag me-2 text-primary"></i>Recent Purchase Orders</h6>
               <a href="#purchases" class="btn btn-outline-secondary btn-sm py-0 px-2">View All</a>
             </div>
-            <div class="erp-table-wrapper">
-              <table class="erp-table">
+            <div class="erp-table-wrapper table-responsive">
+              <table class="erp-table table-compact">
                 <thead>
                   <tr>
                     <th>PO #</th>
@@ -514,9 +514,9 @@ const DashboardComponent = {
                 <tbody>
                   ${(data.recentPurchases || []).map(p => `
                     <tr>
-                      <td class="fw-semibold"><a href="#purchases/view/${p.purchaseId}">${p.purchaseNumber}</a></td>
+                      <td class="fw-semibold font-monospace"><a href="#purchases/view/${p.purchaseId}">${p.purchaseNumber}</a></td>
                       <td>${p.supplierName}</td>
-                      <td class="fw-bold">${App.formatCurrency(p.totalAmount)}</td>
+                      <td class="fw-bold text-warning">${App.formatCurrency(p.totalAmount)}</td>
                       <td><span class="badge-status badge-${p.status.toLowerCase()}">${p.status}</span></td>
                     </tr>
                   `).join('') || '<tr><td colspan="4" class="text-center text-muted">No purchase orders found.</td></tr>'}
@@ -575,7 +575,7 @@ const DashboardComponent = {
   renderCustomer(container, data) {
     const profile = data.profile || {};
     container.innerHTML = `
-      <div class="page-header-container">
+      <div class="page-header-container d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
         <div>
           <h1 class="page-title">Customer Portal</h1>
           <p class="page-subtitle">Welcome, <strong>${profile.name || 'Valued Customer'}</strong> &bull; ${profile.company || ''}</p>
@@ -587,8 +587,8 @@ const DashboardComponent = {
 
       <!-- Customer KPI Cards -->
       <div class="row g-3 mb-4">
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Total Orders</span>
               <div class="kpi-icon-box icon-blue"><i class="bi bi-cart3"></i></div>
@@ -598,8 +598,8 @@ const DashboardComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Pending Orders</span>
               <div class="kpi-icon-box icon-amber"><i class="bi bi-clock-history"></i></div>
@@ -609,8 +609,8 @@ const DashboardComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Total Spend</span>
               <div class="kpi-icon-box icon-green"><i class="bi bi-cash-stack"></i></div>
@@ -620,8 +620,8 @@ const DashboardComponent = {
           </div>
         </div>
 
-        <div class="col-sm-6 col-xl-3">
-          <div class="kpi-card">
+        <div class="col-12 col-sm-6 col-xl-3">
+          <div class="kpi-card h-100">
             <div class="kpi-header">
               <span class="kpi-title">Outstanding Balance</span>
               <div class="kpi-icon-box icon-rose"><i class="bi bi-receipt"></i></div>
@@ -636,7 +636,7 @@ const DashboardComponent = {
 
       <!-- Charts -->
       <div class="row g-3 mb-4">
-        <div class="col-lg-8">
+        <div class="col-12 col-lg-8">
           <div class="erp-card h-100">
             <div class="erp-card-header">
               <h6 class="erp-card-title"><i class="bi bi-graph-up me-2 text-primary"></i>My Purchase History (Last 6 Months)</h6>
@@ -647,7 +647,7 @@ const DashboardComponent = {
           </div>
         </div>
 
-        <div class="col-lg-4">
+        <div class="col-12 col-lg-4">
           <div class="erp-card h-100">
             <div class="erp-card-header">
               <h6 class="erp-card-title"><i class="bi bi-pie-chart me-2 text-info"></i>Order Status Breakdown</h6>
@@ -663,14 +663,14 @@ const DashboardComponent = {
 
       <!-- Recent Orders & Invoices -->
       <div class="row g-3">
-        <div class="col-lg-6">
-          <div class="erp-card">
+        <div class="col-12 col-lg-6">
+          <div class="erp-card mb-0">
             <div class="erp-card-header">
               <h6 class="erp-card-title"><i class="bi bi-cart me-2 text-primary"></i>My Recent Orders</h6>
               <a href="#sales" class="btn btn-outline-secondary btn-sm py-0 px-2">View All</a>
             </div>
-            <div class="erp-table-wrapper">
-              <table class="erp-table">
+            <div class="erp-table-wrapper table-responsive">
+              <table class="erp-table table-compact">
                 <thead>
                   <tr>
                     <th>Order #</th>
@@ -682,9 +682,9 @@ const DashboardComponent = {
                 <tbody>
                   ${(data.recentOrders || []).map(s => `
                     <tr>
-                      <td class="fw-semibold"><a href="#sales/view/${s.saleId}">${s.saleOrderNumber}</a></td>
+                      <td class="fw-semibold font-monospace"><a href="#sales/view/${s.saleId}">${s.saleOrderNumber}</a></td>
                       <td class="text-muted small">${App.formatDate(s.orderDate)}</td>
-                      <td class="fw-bold">${App.formatCurrency(s.totalAmount)}</td>
+                      <td class="fw-bold text-success">${App.formatCurrency(s.totalAmount)}</td>
                       <td><span class="badge-status badge-${s.status.toLowerCase()}">${s.status}</span></td>
                     </tr>
                   `).join('') || '<tr><td colspan="4" class="text-center text-muted">No orders found.</td></tr>'}
@@ -694,14 +694,14 @@ const DashboardComponent = {
           </div>
         </div>
 
-        <div class="col-lg-6">
-          <div class="erp-card">
+        <div class="col-12 col-lg-6">
+          <div class="erp-card mb-0">
             <div class="erp-card-header">
               <h6 class="erp-card-title"><i class="bi bi-receipt me-2 text-primary"></i>My Invoices</h6>
               <a href="#invoices" class="btn btn-outline-secondary btn-sm py-0 px-2">View All</a>
             </div>
-            <div class="erp-table-wrapper">
-              <table class="erp-table">
+            <div class="erp-table-wrapper table-responsive">
+              <table class="erp-table table-compact">
                 <thead>
                   <tr>
                     <th>Invoice #</th>
@@ -713,7 +713,7 @@ const DashboardComponent = {
                 <tbody>
                   ${(data.recentInvoices || []).map(i => `
                     <tr>
-                      <td class="fw-semibold"><a href="#invoices/view/${i.invoiceId}">${i.invoiceNumber}</a></td>
+                      <td class="fw-semibold font-monospace"><a href="#invoices/view/${i.invoiceId}">${i.invoiceNumber}</a></td>
                       <td class="text-muted small">${App.formatDate(i.dueDate)}</td>
                       <td class="fw-bold ${i.balanceAmount > 0 ? 'text-danger' : 'text-success'}">${App.formatCurrency(i.balanceAmount)}</td>
                       <td><span class="badge-status badge-${i.status.toLowerCase()}">${i.status}</span></td>
