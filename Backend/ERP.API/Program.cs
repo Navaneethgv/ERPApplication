@@ -32,7 +32,10 @@ builder.Services.AddCors(options =>
 });
 
 // Configure JWT Authentication
-var jwtKey = builder.Configuration["JwtSettings:Key"] ?? "ERP_Secure_JWT_Secret_Key_2026_Enterprise_System_Super_Secret_Key_!#9988";
+var configKey = builder.Configuration["JwtSettings:Key"];
+var jwtKey = string.IsNullOrWhiteSpace(configKey)
+    ? "ERP_Secure_JWT_Secret_Key_2026_Enterprise_System_Super_Secret_Key_!#9988"
+    : configKey;
 var key = Encoding.UTF8.GetBytes(jwtKey);
 
 builder.Services.AddAuthentication(options =>
