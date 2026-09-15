@@ -1,0 +1,447 @@
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\appsettings.Development.json
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\appsettings.json
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.API.staticwebassets.endpoints.json
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.API.exe
+d:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.API.deps.json
+d:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.API.runtimeconfig.json
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.API.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.API.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\BCrypt-Net-Next.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ClosedXML.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ClosedXML.Parser.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\DocumentFormat.OpenXml.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\DocumentFormat.OpenXml.Framework.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ExcelNumberFormat.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.OpenApi.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Npgsql.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\RBush.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\SixLabors.Fonts.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\System.IO.Packaging.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.Application.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.Domain.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.Infrastructure.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.Application.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.Infrastructure.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.Domain.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.csproj.AssemblyReference.cache
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\rpswa.dswa.cache.json
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.AssemblyInfoInputs.cache
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.AssemblyInfo.cs
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.csproj.CoreCompileInputs.cache
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.MvcApplicationPartsAssemblyInfo.cs
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.MvcApplicationPartsAssemblyInfo.cache
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\rjimswa.dswa.cache.json
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\scopedcss\bundle\ERP.API.styles.css
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\staticwebassets.build.json
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\staticwebassets.build.json.cache
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\staticwebassets.development.json
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\swae.build.ex.cache
+d:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.csproj.Up2Date
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\refint\ERP.API.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.pdb
+d:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.genruntimeconfig.cache
+d:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\obj\Debug\net10.0\ref\ERP.API.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Humanizer.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.Build.Framework.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.CodeAnalysis.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.CodeAnalysis.ExternalAccess.RazorCompiler.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.VisualStudio.SolutionPersistence.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Mono.TextTemplating.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\Newtonsoft.Json.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\System.CodeDom.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\System.Composition.AttributedModel.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\System.Composition.Convention.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\System.Composition.Hosting.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\System.Composition.Runtime.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\System.Composition.TypedParts.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\appsettings.Development.json
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\appsettings.json
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.API.staticwebassets.endpoints.json
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.API.exe
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.API.deps.json
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.API.runtimeconfig.json
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.API.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.API.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\BCrypt-Net-Next.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ClosedXML.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ClosedXML.Parser.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\DocumentFormat.OpenXml.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\DocumentFormat.OpenXml.Framework.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ExcelNumberFormat.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Humanizer.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.Build.Framework.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.CodeAnalysis.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.CodeAnalysis.ExternalAccess.RazorCompiler.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Design.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.OpenApi.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Microsoft.VisualStudio.SolutionPersistence.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Mono.TextTemplating.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Newtonsoft.Json.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Npgsql.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\RBush.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\SixLabors.Fonts.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\System.CodeDom.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\System.Composition.AttributedModel.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\System.Composition.Convention.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\System.Composition.Hosting.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\System.Composition.Runtime.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\System.Composition.TypedParts.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\System.IO.Packaging.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.Application.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.Domain.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.Infrastructure.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.Application.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.Infrastructure.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\bin\Debug\net10.0\ERP.Domain.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.csproj.AssemblyReference.cache
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\rpswa.dswa.cache.json
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.AssemblyInfoInputs.cache
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.AssemblyInfo.cs
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.csproj.CoreCompileInputs.cache
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.MvcApplicationPartsAssemblyInfo.cs
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.MvcApplicationPartsAssemblyInfo.cache
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\rjimswa.dswa.cache.json
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\scopedcss\bundle\ERP.API.styles.css
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\staticwebassets.build.json
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\staticwebassets.build.json.cache
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\staticwebassets.development.json
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\swae.build.ex.cache
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.csproj.Up2Date
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\refint\ERP.API.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\ERP.API.genruntimeconfig.cache
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.API\obj\Debug\net10.0\ref\ERP.API.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\appsettings.Development.json
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\appsettings.json
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ERP.API.staticwebassets.endpoints.json
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ERP.API.exe
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ERP.API.deps.json
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ERP.API.runtimeconfig.json
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ERP.API.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ERP.API.pdb
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\BCrypt-Net-Next.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ClosedXML.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ClosedXML.Parser.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\DocumentFormat.OpenXml.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\DocumentFormat.OpenXml.Framework.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ExcelNumberFormat.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Humanizer.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.Build.Framework.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.CodeAnalysis.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.CodeAnalysis.ExternalAccess.RazorCompiler.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Design.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.EntityFrameworkCore.Relational.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.Extensions.DependencyModel.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.OpenApi.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Microsoft.VisualStudio.SolutionPersistence.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Mono.TextTemplating.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Newtonsoft.Json.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Npgsql.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\RBush.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\SixLabors.Fonts.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\System.CodeDom.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\System.Composition.AttributedModel.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\System.Composition.Convention.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\System.Composition.Hosting.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\System.Composition.Runtime.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\System.Composition.TypedParts.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\System.IdentityModel.Tokens.Jwt.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\System.IO.Packaging.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ERP.Application.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ERP.Domain.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ERP.Infrastructure.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ERP.Application.pdb
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ERP.Infrastructure.pdb
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\bin\Debug\net10.0\ERP.Domain.pdb
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\ERP.API.csproj.AssemblyReference.cache
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\rpswa.dswa.cache.json
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\ERP.API.GeneratedMSBuildEditorConfig.editorconfig
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\ERP.API.AssemblyInfoInputs.cache
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\ERP.API.AssemblyInfo.cs
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\ERP.API.csproj.CoreCompileInputs.cache
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\ERP.API.MvcApplicationPartsAssemblyInfo.cs
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\ERP.API.MvcApplicationPartsAssemblyInfo.cache
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\rjimswa.dswa.cache.json
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\scopedcss\bundle\ERP.API.styles.css
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\staticwebassets.build.json
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\staticwebassets.build.json.cache
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\staticwebassets.development.json
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\swae.build.ex.cache
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\ERP.API.csproj.Up2Date
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\ERP.API.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\refint\ERP.API.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\ERP.API.pdb
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\ERP.API.genruntimeconfig.cache
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.API\obj\Debug\net10.0\ref\ERP.API.dll

@@ -1,0 +1,57 @@
+d:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Infrastructure.deps.json
+d:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Infrastructure.runtimeconfig.json
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Infrastructure.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Infrastructure.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Application.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Domain.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Application.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Domain.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.csproj.AssemblyReference.cache
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.AssemblyInfoInputs.cache
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.AssemblyInfo.cs
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.csproj.CoreCompileInputs.cache
+d:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infr.92BEE6A2.Up2Date
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\refint\ERP.Infrastructure.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.pdb
+d:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.genruntimeconfig.cache
+d:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ref\ERP.Infrastructure.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Infrastructure.deps.json
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Infrastructure.runtimeconfig.json
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Infrastructure.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Infrastructure.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Application.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Domain.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Application.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Domain.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.csproj.AssemblyReference.cache
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.AssemblyInfoInputs.cache
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.AssemblyInfo.cs
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infr.92BEE6A2.Up2Date
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\refint\ERP.Infrastructure.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.genruntimeconfig.cache
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Infrastructure\obj\Debug\net10.0\ref\ERP.Infrastructure.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Infrastructure.deps.json
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Infrastructure.runtimeconfig.json
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Infrastructure.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Infrastructure.pdb
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Application.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Domain.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Application.pdb
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Infrastructure\bin\Debug\net10.0\ERP.Domain.pdb
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.csproj.AssemblyReference.cache
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.AssemblyInfoInputs.cache
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.AssemblyInfo.cs
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.csproj.CoreCompileInputs.cache
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infr.92BEE6A2.Up2Date
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Infrastructure\obj\Debug\net10.0\refint\ERP.Infrastructure.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.pdb
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Infrastructure\obj\Debug\net10.0\ERP.Infrastructure.genruntimeconfig.cache
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Infrastructure\obj\Debug\net10.0\ref\ERP.Infrastructure.dll

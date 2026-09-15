@@ -1,0 +1,33 @@
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Domain\bin\Debug\net10.0\ERP.Domain.deps.json
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Domain\bin\Debug\net10.0\ERP.Domain.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Domain\bin\Debug\net10.0\ERP.Domain.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Domain\obj\Debug\net10.0\ERP.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Domain\obj\Debug\net10.0\ERP.Domain.AssemblyInfoInputs.cache
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Domain\obj\Debug\net10.0\ERP.Domain.AssemblyInfo.cs
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Domain\obj\Debug\net10.0\ERP.Domain.csproj.CoreCompileInputs.cache
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Domain\obj\Debug\net10.0\ERP.Domain.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Domain\obj\Debug\net10.0\refint\ERP.Domain.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Domain\obj\Debug\net10.0\ERP.Domain.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Domain\obj\Debug\net10.0\ref\ERP.Domain.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Domain\bin\Debug\net10.0\ERP.Domain.deps.json
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Domain\bin\Debug\net10.0\ERP.Domain.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Domain\bin\Debug\net10.0\ERP.Domain.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Domain\obj\Debug\net10.0\ERP.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Domain\obj\Debug\net10.0\ERP.Domain.AssemblyInfoInputs.cache
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Domain\obj\Debug\net10.0\ERP.Domain.AssemblyInfo.cs
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Domain\obj\Debug\net10.0\ERP.Domain.csproj.CoreCompileInputs.cache
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Domain\obj\Debug\net10.0\ERP.Domain.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Domain\obj\Debug\net10.0\refint\ERP.Domain.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Domain\obj\Debug\net10.0\ERP.Domain.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Domain\obj\Debug\net10.0\ref\ERP.Domain.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Domain\bin\Debug\net10.0\ERP.Domain.deps.json
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Domain\bin\Debug\net10.0\ERP.Domain.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Domain\bin\Debug\net10.0\ERP.Domain.pdb
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Domain\obj\Debug\net10.0\ERP.Domain.GeneratedMSBuildEditorConfig.editorconfig
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Domain\obj\Debug\net10.0\ERP.Domain.AssemblyInfoInputs.cache
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Domain\obj\Debug\net10.0\ERP.Domain.AssemblyInfo.cs
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Domain\obj\Debug\net10.0\ERP.Domain.csproj.CoreCompileInputs.cache
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Domain\obj\Debug\net10.0\ERP.Domain.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Domain\obj\Debug\net10.0\refint\ERP.Domain.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Domain\obj\Debug\net10.0\ERP.Domain.pdb
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Domain\obj\Debug\net10.0\ref\ERP.Domain.dll

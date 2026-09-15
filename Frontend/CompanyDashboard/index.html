@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApexERP - Enterprise Management System</title>
+  
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 & Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  
+  <!-- ERP Custom Stylesheet -->
+  <link href="css/erp.css?v=1.6" rel="stylesheet">
+  
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- ================= AUTH VIEW (LOGIN / REGISTER) ================= -->
+  <div id="auth-view" style="display: flex;">
+    <div class="auth-card">
+      <div class="auth-brand">
+        <i class="bi bi-boxes"></i>
+        <h2>ApexERP System</h2>
+        <p class="text-muted small">Enterprise Resource Planning & Operations</p>
+      </div>
+
+      <!-- Quick Demo Account Fill Buttons -->
+      <div class="mb-3">
+        <label class="form-label text-muted small fw-semibold">Quick Demo Login:</label>
+        <div class="quick-login-pills">
+          <button type="button" class="quick-pill-btn" onclick="Auth.fillDemo('admin@erp.com', 'Admin@123')">
+            <i class="bi bi-shield-lock-fill text-danger me-1"></i>Admin
+          </button>
+          <button type="button" class="quick-pill-btn" onclick="Auth.fillDemo('sarah.ops@erp.com', 'Employee@123')">
+            <i class="bi bi-person-gear text-primary me-1"></i>Ops Lead
+          </button>
+          <button type="button" class="quick-pill-btn" onclick="Auth.fillDemo('john.sales@erp.com', 'Employee@123')">
+            <i class="bi bi-person-badge text-info me-1"></i>Sales Rep
+          </button>
+          <button type="button" class="quick-pill-btn" onclick="Auth.fillDemo('acme.buyer@client.com', 'Customer@123')">
+            <i class="bi bi-building text-success me-1"></i>Customer
+          </button>
+        </div>
+      </div>
+
+      <div id="auth-alert" class="alert alert-danger py-2 small d-none"></div>
+
+      <!-- Login Form -->
+      <form id="login-form" onsubmit="Auth.handleLogin(event)">
+        <div class="mb-3">
+          <label class="form-label" for="login-username">Email / Username <span class="required-asterisk">*</span></label>
+          <div class="input-group">
+            <span class="input-group-text bg-light"><i class="bi bi-envelope"></i></span>
+            <input type="text" id="login-username" class="form-control" placeholder="user@erp.com" required autocomplete="username">
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" for="login-password">Password <span class="required-asterisk">*</span></label>
+          <div class="input-group">
+            <span class="input-group-text bg-light"><i class="bi bi-lock"></i></span>
+            <input type="password" id="login-password" class="form-control" placeholder="••••••••" required autocomplete="current-password">
+            <button class="btn btn-outline-secondary btn-toggle-password" type="button" onclick="App.togglePasswordVisibility('login-password', this)" title="Show password" aria-label="Show password">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <button type="submit" id="btn-login" class="btn btn-erp-primary w-100 py-2 mt-2">
+          <span class="spinner-border spinner-border-sm d-none me-2"></span>Sign In to ERP
+        </button>
+      </form>
+
+      <!-- Customer Registration Toggle -->
+      <div class="mt-4 pt-3 border-top text-center">
+        <p class="text-muted small mb-2">Are you a customer needing portal access?</p>
+        <button type="button" class="btn btn-outline-secondary btn-sm" onclick="Auth.toggleRegisterModal()">
+          <i class="bi bi-person-plus me-1"></i>Create Customer Account
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ================= AUTHENTICATED SPA LAYOUT ================= -->
+  <div id="app-layout" style="display: none;">
+    
+    <!-- Persistent Sidebar -->
+    <aside id="sidebar-wrapper">
+      <div class="sidebar-brand">
+        <i class="bi bi-boxes"></i>
+        <span>ApexERP</span>
+      </div>
+
+      <div class="sidebar-user-badge">
+        <div class="user-avatar-circle" id="sidebar-user-avatar">AD</div>
+        <div style="overflow: hidden;">
+          <div class="user-meta-name" id="sidebar-user-name">Administrator</div>
+          <div class="user-meta-role" id="sidebar-user-role">ADMIN</div>
+        </div>
+      </div>
+
+      <ul class="sidebar-menu" id="sidebar-nav-list">
+        <!-- Dynamically rendered based on active role -->
+      </ul>
+    </aside>
+
+    <!-- Page Content Wrapper -->
+    <div id="page-content-wrapper">
+      
+      <!-- Persistent Top Header -->
+      <header id="top-header">
+        <div class="header-left">
+          <button type="button" class="sidebar-toggle-btn" onclick="App.toggleSidebar()">
+            <i class="bi bi-list"></i>
+          </button>
+          <div class="breadcrumb-container" id="breadcrumb-nav">
+            <span>ApexERP</span> / <span class="fw-semibold text-dark">Dashboard</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <!-- Live System Time / Status -->
+          <div class="d-none d-md-flex align-items-center text-muted small">
+            <span class="badge bg-success-subtle text-success border border-success-subtle me-3">
+              <i class="bi bi-record-fill me-1"></i>Excel DB Online
+            </span>
+          </div>
+
+          <!-- Order Notification Bell Dropdown (for Staff) -->
+          <div class="dropdown me-3" id="notification-bell-wrapper" style="display: none;">
+            <button class="btn btn-notification-bell position-relative p-2" type="button" id="notificationDropdown" data-bs-toggle="dropdown" aria-expanded="false" title="Order Notifications">
+              <i class="bi bi-bell fs-5 text-secondary"></i>
+              <span id="notification-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
+                0
+              </span>
+            </button>
+            <div class="dropdown-menu dropdown-menu-end shadow-lg border-0 notification-dropdown-menu p-0" aria-labelledby="notificationDropdown">
+              <div class="notification-dropdown-header d-flex justify-content-between align-items-center px-3 py-2 border-bottom bg-light">
+                <div class="d-flex align-items-center">
+                  <span class="fw-bold text-dark me-2 small">Order Notifications</span>
+                  <span class="badge bg-primary-subtle text-primary rounded-pill small" id="dropdown-unread-count" style="display: none;">0 unread</span>
+                </div>
+                <button type="button" class="btn btn-link btn-sm text-decoration-none p-0 text-muted small" onclick="NotificationsComponent.markAllAsRead()">
+                  <i class="bi bi-check2-all me-1"></i>Mark all read
+                </button>
+              </div>
+              <div class="notification-items-wrapper" id="notification-items-list">
+                <!-- Dynamically loaded via NotificationsComponent.loadDropdown() -->
+              </div>
+              <div class="notification-dropdown-footer p-2 text-center border-top bg-light">
+                <a href="#sales" class="btn btn-link btn-sm text-decoration-none fw-semibold text-primary py-1 small">
+                  View All Orders <i class="bi bi-arrow-right ms-1"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- User Menu Dropdown -->
+          <div class="dropdown">
+            <button class="btn btn-link text-decoration-none dropdown-toggle text-dark d-flex align-items-center p-0" type="button" data-bs-toggle="dropdown">
+              <div class="user-avatar-circle me-2" style="width: 32px; height: 32px; font-size: 0.8rem;" id="header-user-avatar">AD</div>
+              <span class="fw-semibold small d-none d-sm-inline" id="header-user-name">Admin</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm border">
+              <li><h6 class="dropdown-header" id="dropdown-user-email">admin@erp.com</h6></li>
+              <li><a class="dropdown-item" href="#profile"><i class="bi bi-person me-2"></i>My Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="javascript:void(0)" onclick="Auth.logout()"><i class="bi bi-box-arrow-right me-2"></i>Sign Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dynamic Main Workspace (Only this container updates on navigation!) -->
+      <main id="app-content">
+        <!-- Dynamic component HTML renders here -->
+      </main>
+
+    </div>
+  </div>
+
+
+  <!-- ================= GLOBAL CONFIRMATION MODAL ================= -->
+  <div class="modal fade" id="confirmModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content border-0 shadow">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="modal-title fw-bold" id="confirmModalTitle">Confirm Action</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body py-3 text-muted" id="confirmModalBody">
+          Are you sure you want to proceed with this action?
+        </div>
+        <div class="modal-footer border-0 pt-0">
+          <button type="button" class="btn btn-erp-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger btn-sm" id="confirmModalBtn">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= RECORD PAYMENT MODAL ================= -->
+  <div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold"><i class="bi bi-cash-stack text-success me-2"></i>Record Invoice Payment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <form id="record-payment-form" onsubmit="InvoicesComponent.submitPayment(event)">
+          <div class="modal-body">
+            <input type="hidden" id="pay-invoice-id">
+            
+            <div class="mb-3 p-2 bg-light rounded border">
+              <div class="d-flex justify-content-between small text-muted">
+                <span>Invoice: <strong id="pay-modal-inv-num"></strong></span>
+                <span>Balance: <strong class="text-danger" id="pay-modal-balance"></strong></span>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="pay-amount">Payment Amount (₹) <span class="required-asterisk">*</span></label>
+              <input type="number" step="0.01" min="0.01" id="pay-amount" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="pay-method">Payment Method <span class="required-asterisk">*</span></label>
+              <select id="pay-method" class="form-select" required>
+                <option value="Bank Transfer">Bank Transfer (ACH / Wire)</option>
+                <option value="Credit Card">Credit Card</option>
+                <option value="Cheque">Corporate Cheque</option>
+                <option value="Cash">Cash</option>
+              </select>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="pay-notes">Notes / Reference</label>
+              <input type="text" id="pay-notes" class="form-control" placeholder="Transaction ref or remittance note">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-erp-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-erp-primary btn-sm" id="btn-save-payment">
+              <i class="bi bi-check2-circle me-1"></i>Process Payment
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= CUSTOMER REGISTRATION MODAL ================= -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold"><i class="bi bi-person-plus text-primary me-2"></i>Register Customer Portal</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <form id="register-customer-form" onsubmit="Auth.handleRegister(event)">
+          <div class="modal-body">
+            <div id="register-alert" class="alert alert-danger py-2 small d-none"></div>
+
+            <div class="mb-3">
+              <label class="form-label" for="reg-name">Contact / Full Name <span class="required-asterisk">*</span></label>
+              <input type="text" id="reg-name" class="form-control" placeholder="e.g. Alice     Walker" required>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label class="form-label" for="reg-email">Email Address <span class="required-asterisk">*</span></label>
+                <input type="email" id="reg-email" class="form-control" placeholder="alice@company.com" required>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label class="form-label" for="reg-phone">Phone <span class="required-asterisk">*</span></label>
+                <input type="tel" id="reg-phone" class="form-control" placeholder="+1-555-0199" required>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="reg-company">Company Name</label>
+              <input type="text" id="reg-company" class="form-control" placeholder="e.g. Acme Corp">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="reg-address">Billing Address</label>
+              <input type="text" id="reg-address" class="form-control" placeholder="Street, City, State, ZIP">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label" for="reg-password">Password <span class="required-asterisk">*</span></label>
+              <div class="input-group">
+                <span class="input-group-text bg-light"><i class="bi bi-lock"></i></span>
+                <input type="password" id="reg-password" class="form-control" placeholder="••••••••" required>
+                <button class="btn btn-outline-secondary btn-toggle-password" type="button" onclick="App.togglePasswordVisibility('reg-password', this)" title="Show password" aria-label="Show password">
+                  <i class="bi bi-eye"></i>
+                </button>
+              </div>
+              <div id="reg-password-checklist"></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-erp-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-erp-primary btn-sm" id="btn-register-submit">
+              <i class="bi bi-check2 me-1"></i>Create Account
+            </button>
+          </div>
+        </form> 
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= GLOBAL TOAST CONTAINER ================= -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3" id="toastContainer" style="z-index: 1100;"></div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Core ERP Client Scripts -->
+  <script src="js/api.js?v=1.7"></script>
+  <script src="js/auth.js?v=1.7"></script>
+  <script src="js/router.js?v=1.7"></script>
+
+  <!-- Module Components -->
+  <script src="js/components/dashboard.js?v=1.7"></script>
+  <script src="js/components/employees.js?v=1.7"></script>
+  <script src="js/components/customers.js?v=1.7"></script>
+  <script src="js/components/products.js?v=1.7"></script>
+  <script src="js/components/inventory.js?v=1.7"></script>
+  <script src="js/components/suppliers.js?v=1.7"></script>
+  <script src="js/components/purchases.js?v=1.7"></script>
+  <script src="js/components/sales.js?v=1.7"></script>
+  <script src="js/components/invoices.js?v=1.7"></script>
+  <script src="js/components/transactions.js?v=1.7"></script>
+  <script src="js/components/notifications.js?v=1.7"></script>
+  <script src="js/components/reports.js?v=1.7"></script>
+  <script src="js/components/profile.js?v=1.7"></script>
+  <script src="js/components/security.js?v=1.7"></script>
+
+  <!-- App Bootstrap -->
+  <script src="js/app.js?v=1.7"></script>
+</body>
+</html>

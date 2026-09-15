@@ -1,0 +1,10 @@
+﻿global using ERP.Domain.Entities;
+global using ERP.Domain.Enums;
+global using ERP.Domain.Common;
+global using ERP.Application.DTOs;
+global using ERP.Application.Interfaces.Services;
+global using ERP.Infrastructure.Data;
+global using ERP.Infrastructure;
+global using ERP.Application;
+global using ApplicationDbContext = ERP.Infrastructure.Data.ApplicationDbContext;
+global using ErpDbContext = ERP.Infrastructure.Data.ApplicationDbContext;

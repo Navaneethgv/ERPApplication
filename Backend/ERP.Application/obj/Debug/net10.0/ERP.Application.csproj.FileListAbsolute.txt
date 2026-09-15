@@ -1,0 +1,45 @@
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Application\bin\Debug\net10.0\ERP.Application.deps.json
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Application\bin\Debug\net10.0\ERP.Application.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Application\bin\Debug\net10.0\ERP.Application.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Application\bin\Debug\net10.0\ERP.Domain.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Application\bin\Debug\net10.0\ERP.Domain.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.csproj.AssemblyReference.cache
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.AssemblyInfoInputs.cache
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.AssemblyInfo.cs
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.csproj.CoreCompileInputs.cache
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Application\obj\Debug\net10.0\ERP.Appl.DD782D7E.Up2Date
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Application\obj\Debug\net10.0\refint\ERP.Application.dll
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy\Backend\ERP.Application\obj\Debug\net10.0\ref\ERP.Application.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Application\bin\Debug\net10.0\ERP.Application.deps.json
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Application\bin\Debug\net10.0\ERP.Application.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Application\bin\Debug\net10.0\ERP.Application.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Application\bin\Debug\net10.0\ERP.Domain.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Application\bin\Debug\net10.0\ERP.Domain.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.csproj.AssemblyReference.cache
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.AssemblyInfoInputs.cache
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.AssemblyInfo.cs
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.csproj.CoreCompileInputs.cache
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Application\obj\Debug\net10.0\ERP.Appl.DD782D7E.Up2Date
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Application\obj\Debug\net10.0\refint\ERP.Application.dll
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.pdb
+D:\Final ERP ApplicationDEMO - Main - Copy - Copy\Backend\ERP.Application\obj\Debug\net10.0\ref\ERP.Application.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Application\bin\Debug\net10.0\ERP.Application.deps.json
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Application\bin\Debug\net10.0\ERP.Application.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Application\bin\Debug\net10.0\ERP.Application.pdb
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Application\bin\Debug\net10.0\ERP.Domain.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Application\bin\Debug\net10.0\ERP.Domain.pdb
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.csproj.AssemblyReference.cache
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.GeneratedMSBuildEditorConfig.editorconfig
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.AssemblyInfoInputs.cache
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.AssemblyInfo.cs
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.csproj.CoreCompileInputs.cache
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Application\obj\Debug\net10.0\ERP.Appl.DD782D7E.Up2Date
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Application\obj\Debug\net10.0\refint\ERP.Application.dll
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Application\obj\Debug\net10.0\ERP.Application.pdb
+d:\Final ERP ApplicationDEMO - Main\Backend\ERP.Application\obj\Debug\net10.0\ref\ERP.Application.dll

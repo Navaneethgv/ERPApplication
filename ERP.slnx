@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/Backend/">
+    <Project Path="Backend/ERP.API/ERP.API.csproj" />
+    <Project Path="Backend/ERP.Application/ERP.Application.csproj" />
+    <Project Path="Backend/ERP.Domain/ERP.Domain.csproj" />
+    <Project Path="Backend/ERP.Infrastructure/ERP.Infrastructure.csproj" />
+  </Folder>
+</Solution>
