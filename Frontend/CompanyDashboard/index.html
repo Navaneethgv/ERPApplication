@@ -15,19 +15,21 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   
   <!-- ERP Custom Stylesheet -->
-  <link href="css/erp.css?v=2.0" rel="stylesheet">
+  <link href="css/erp.css?v=2.1" rel="stylesheet">
   
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
 </head>
-<body>
+<body class="auth-active">
 
   <!-- ================= AUTH VIEW (LOGIN / REGISTER) ================= -->
-  <div id="auth-view" class="min-vh-100 d-flex align-items-center justify-content-center p-3 p-sm-4" style="display: flex;">
-    <div class="container d-flex justify-content-center p-0">
-      <div class="card border-0 shadow-lg auth-card w-100 p-3 p-sm-4 p-md-4">
+  <div id="auth-view" class="auth-wrapper">
+    <div class="auth-container">
+      <div class="card border-0 shadow-lg auth-card">
         <div class="auth-brand text-center mb-4">
-          <i class="bi bi-boxes"></i>
+          <div class="auth-logo-badge">
+            <i class="bi bi-boxes"></i>
+          </div>
           <h2 class="fw-bold mt-2">ApexERP System</h2>
           <p class="text-muted small mb-0">Enterprise Resource Planning & Operations</p>
         </div>
@@ -100,7 +102,7 @@
 
 
   <!-- ================= AUTHENTICATED SPA LAYOUT ================= -->
-  <div id="app-layout" style="display: none;">
+  <div id="app-layout" class="d-none" style="display: none;">
     
     <!-- Persistent Sidebar -->
     <aside id="sidebar-wrapper">
@@ -356,6 +358,6 @@
   <script src="js/components/security.js?v=1.7"></script>
 
   <!-- App Bootstrap -->
-  <script src="js/app.js?v=1.7"></script>
+  <script src="js/app.js?v=2.1"></script>
 </body>
 </html>

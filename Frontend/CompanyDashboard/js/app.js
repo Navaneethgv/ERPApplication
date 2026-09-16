@@ -43,8 +43,20 @@ const App = {
   },
 
   initAuthenticatedUI() {
-    document.getElementById('auth-view').style.display = 'none';
-    document.getElementById('app-layout').style.display = 'flex';
+    document.body.classList.remove('auth-active', 'unauthenticated');
+    document.body.classList.add('authenticated');
+
+    const authView = document.getElementById('auth-view');
+    const appLayout = document.getElementById('app-layout');
+
+    if (authView) {
+      authView.classList.add('d-none');
+      authView.style.setProperty('display', 'none', 'important');
+    }
+    if (appLayout) {
+      appLayout.classList.remove('d-none');
+      appLayout.style.setProperty('display', 'flex', 'important');
+    }
 
     const user = Auth.getUser();
     if (user) {
@@ -86,12 +98,23 @@ const App = {
     if (typeof NotificationsComponent !== 'undefined') {
       NotificationsComponent.stop();
     }
+    this.closeMobileSidebar();
+
+    document.body.classList.remove('authenticated');
+    document.body.classList.add('auth-active', 'unauthenticated');
+
     const authView = document.getElementById('auth-view');
     const appLayout = document.getElementById('app-layout');
     const appContent = document.getElementById('app-content');
 
-    if (authView) authView.style.display = 'flex';
-    if (appLayout) appLayout.style.display = 'none';
+    if (authView) {
+      authView.classList.remove('d-none');
+      authView.style.setProperty('display', 'flex', 'important');
+    }
+    if (appLayout) {
+      appLayout.classList.add('d-none');
+      appLayout.style.setProperty('display', 'none', 'important');
+    }
     if (appContent) appContent.innerHTML = '';
 
     // Clear hash from URL so unauthenticated users cannot retain protected route in address bar
