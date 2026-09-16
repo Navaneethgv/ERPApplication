@@ -12,6 +12,10 @@ public static class DependencyInjection
     public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         var connectionString = configuration.GetConnectionString("DefaultConnection");
+        if (string.IsNullOrWhiteSpace(connectionString))
+        {
+            connectionString = "Host=localhost;Port=5432;Database=erp_db;Username=postgres;Password=9500;Include Error Detail=true";
+        }
         services.AddDbContext<ApplicationDbContext>(options =>
         {
             options.UseNpgsql(connectionString, b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName));
