@@ -386,9 +386,15 @@ const TransactionsComponent = {
                 <i class="bi bi-receipt me-1"></i>View Invoice #${matchingInvoice.invoiceNumber}
               </a>
               ${matchingInvoice.balanceAmount > 0 ? `
-                <button type="button" class="btn btn-success btn-sm" onclick="InvoicesComponent.openPaymentModal(${matchingInvoice.invoiceId}, '${matchingInvoice.invoiceNumber}', ${matchingInvoice.balanceAmount})">
-                  <i class="bi bi-cash-stack me-1"></i>Pay Balance
-                </button>
+                ${isCustomer ? `
+                  <button type="button" class="btn btn-primary btn-sm" onclick="InvoicesComponent.openPaymentModal(${matchingInvoice.invoiceId}, '${matchingInvoice.invoiceNumber}', ${matchingInvoice.balanceAmount})">
+                    <i class="bi bi-credit-card me-1"></i>Pay Invoice
+                  </button>
+                ` : (Auth.isAdmin() || Auth.hasPermission('invoices', 'EDIT')) ? `
+                  <button type="button" class="btn btn-success btn-sm" onclick="InvoicesComponent.openPaymentModal(${matchingInvoice.invoiceId}, '${matchingInvoice.invoiceNumber}', ${matchingInvoice.balanceAmount})">
+                    <i class="bi bi-cash-stack me-1"></i>Record Payment
+                  </button>
+                ` : ''}
               ` : ''}
             ` : ''}
           </div>

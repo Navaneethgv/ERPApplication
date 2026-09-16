@@ -175,9 +175,15 @@ const InvoicesComponent = {
               <i class="bi bi-eye"></i> View
             </a>
             ${i.balanceAmount > 0 ? `
-              <button type="button" class="btn btn-success btn-sm" title="Record Payment" onclick="InvoicesComponent.openPaymentModal(${i.invoiceId}, '${i.invoiceNumber}', ${i.balanceAmount})">
-                <i class="bi bi-cash-stack"></i> Pay
-              </button>
+              ${isCustomer ? `
+                <button type="button" class="btn btn-primary btn-sm" title="Pay Invoice" onclick="InvoicesComponent.openPaymentModal(${i.invoiceId}, '${i.invoiceNumber}', ${i.balanceAmount})">
+                  <i class="bi bi-credit-card me-1"></i>Pay Invoice
+                </button>
+              ` : (Auth.isAdmin() || Auth.hasPermission('invoices', 'EDIT')) ? `
+                <button type="button" class="btn btn-success btn-sm" title="Record Customer Payment" onclick="InvoicesComponent.openPaymentModal(${i.invoiceId}, '${i.invoiceNumber}', ${i.balanceAmount})">
+                  <i class="bi bi-cash-stack me-1"></i>Record Payment
+                </button>
+              ` : ''}
             ` : ''}
           </div>
         </td>
@@ -250,6 +256,8 @@ const InvoicesComponent = {
 
       const matchingSale = sale.find(s => s.saleId === invoice.saleId || s.saleOrderNumber === invoice.saleOrderNumber);
 
+      const isCustomer = Auth.isCustomer();
+
       container.innerHTML = `
         <div class="page-header-container d-print-none d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center gap-2 mb-3 mb-md-4">
           <div>
@@ -263,7 +271,12 @@ const InvoicesComponent = {
             <button type="button" class="btn btn-outline-secondary btn-sm" onclick="window.print()">
               <i class="bi bi-printer me-1"></i>Print / PDF
             </button>
-            ${(Auth.hasPermission('invoices', 'EDIT') && invoice.balanceAmount > 0) ? `
+            ${(isCustomer && invoice.balanceAmount > 0) ? `
+              <button type="button" class="btn btn-primary btn-sm" onclick="InvoicesComponent.openPaymentModal(${invoice.invoiceId}, '${invoice.invoiceNumber}', ${invoice.balanceAmount})">
+                <i class="bi bi-credit-card me-1"></i>Pay Invoice
+              </button>
+            ` : ''}
+            ${(!isCustomer && (Auth.isAdmin() || Auth.hasPermission('invoices', 'EDIT')) && invoice.balanceAmount > 0) ? `
               <button type="button" class="btn btn-success btn-sm" onclick="InvoicesComponent.openPaymentModal(${invoice.invoiceId}, '${invoice.invoiceNumber}', ${invoice.balanceAmount})">
                 <i class="bi bi-cash-stack me-1"></i>Record Payment
               </button>
@@ -358,12 +371,35 @@ const InvoicesComponent = {
   },
 
   openPaymentModal(id, invoiceNumber, balance) {
+    const isCustomer = Auth.isCustomer();
     document.getElementById('pay-invoice-id').value = id;
     document.getElementById('pay-modal-inv-num').textContent = invoiceNumber;
     document.getElementById('pay-modal-balance').textContent = App.formatCurrency(balance);
     document.getElementById('pay-amount').value = balance.toFixed(2);
     document.getElementById('pay-amount').max = balance;
     document.getElementById('pay-notes').value = '';
+
+    const titleEl = document.getElementById('paymentModalTitle');
+    const submitBtn = document.getElementById('btn-save-payment');
+    const notesInput = document.getElementById('pay-notes');
+
+    if (titleEl) {
+      titleEl.innerHTML = isCustomer
+        ? '<i class="bi bi-credit-card text-primary me-2"></i>Pay Invoice'
+        : '<i class="bi bi-cash-stack text-success me-2"></i>Record Invoice Payment';
+    }
+
+    if (submitBtn) {
+      submitBtn.innerHTML = isCustomer
+        ? '<i class="bi bi-check2-circle me-1"></i>Pay Invoice'
+        : '<i class="bi bi-check2-circle me-1"></i>Record Payment';
+    }
+
+    if (notesInput) {
+      notesInput.placeholder = isCustomer
+        ? 'Transaction reference or payment note'
+        : 'Remittance note, bank reference, or cashier comment';
+    }
 
     const modalEl = document.getElementById('paymentModal');
     const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
@@ -376,6 +412,7 @@ const InvoicesComponent = {
     btn.disabled = true;
 
     const id = document.getElementById('pay-invoice-id').value;
+    const isCustomer = Auth.isCustomer();
     const payload = {
       amount: parseFloat(document.getElementById('pay-amount').value) || 0,
       paymentMethod: document.getElementById('pay-method').value,
@@ -388,7 +425,12 @@ const InvoicesComponent = {
       const modal = bootstrap.Modal.getInstance(modalEl);
       if (modal) modal.hide();
 
-      App.showToast('Payment recorded successfully! Financial ledger updated.', 'success');
+      App.showToast(
+        isCustomer
+          ? 'Payment processed successfully! Your invoice balance has been updated.'
+          : 'Payment recorded successfully! Financial ledger updated.',
+        'success'
+      );
       Router.navigate();
     } catch (error) {
       App.showToast(error.message, 'danger');
