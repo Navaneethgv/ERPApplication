@@ -91,7 +91,10 @@ public class AuthService : IAuthService
 
         // 5. Generate JWT Token
         var tokenHandler = new JwtSecurityTokenHandler();
-        var jwtKey = _configuration["JwtSettings:Key"] ?? "ERP_Secure_JWT_Secret_Key_2026_Enterprise_System_Super_Secret_Key_!#9988";
+        var configKey = _configuration["JwtSettings:Key"];
+        var jwtKey = string.IsNullOrWhiteSpace(configKey)
+            ? "ERP_Secure_JWT_Secret_Key_2026_Enterprise_System_Super_Secret_Key_!#9988"
+            : configKey;
         var key = Encoding.UTF8.GetBytes(jwtKey);
         var expiryMinutes = int.TryParse(_configuration["JwtSettings:ExpiryInMinutes"], out int exp) ? exp : 480;
         var expires = DateTime.UtcNow.AddMinutes(expiryMinutes);
