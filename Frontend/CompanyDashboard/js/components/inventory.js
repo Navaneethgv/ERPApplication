@@ -4,6 +4,9 @@ const InventoryComponent = {
   filteredData: [],
   currentPage: 1,
   pageSize: 10,
+  selectedCategory: '',
+  searchQuery: '',
+  statusFilter: '',
 
   async render(container, action, id) {
     if (action === 'adjust') {
@@ -27,9 +30,9 @@ const InventoryComponent = {
     `;
 
     try {
-      this.data = await Api.get('/inventory');
-      this.filteredData = [...this.data];
+      this.data = (await Api.get('/inventory')) || [];
       this.currentPage = 1;
+      this.applyFilter();
       this.renderView(container);
     } catch (error) {
       container.innerHTML = `
@@ -41,11 +44,52 @@ const InventoryComponent = {
     }
   },
 
+  applyFilter() {
+    const q = (this.searchQuery || '').trim().toLowerCase();
+    const filterCat = (this.selectedCategory || '').trim().toLowerCase();
+    const status = (this.statusFilter || '').trim().toLowerCase();
+
+    this.filteredData = (this.data || []).filter(i => {
+      const sku = (i.sku || '').toLowerCase();
+      const name = (i.productName || '').toLowerCase();
+      const location = (i.location || '').toLowerCase();
+      const itemCat = (i.category || i.Category || '').trim().toLowerCase();
+
+      // Search match across SKU, Product Name, Location, and Category
+      const matchQ = !q || sku.includes(q) || name.includes(q) || location.includes(q) || itemCat.includes(q);
+
+      // Category match (case-insensitive & trimmed)
+      const matchCat = !filterCat || itemCat === filterCat;
+
+      // Status match
+      let matchStatus = true;
+      if (status === 'low') {
+        matchStatus = Boolean(i.isLowStock || (i.quantityOnHand <= (i.reorderLevel ?? 10)));
+      } else if (status === 'good') {
+        matchStatus = Boolean(!i.isLowStock && (i.quantityOnHand > (i.reorderLevel ?? 10)));
+      }
+
+      return matchQ && matchCat && matchStatus;
+    });
+  },
+
   renderView(container) {
-    const totalValuation = this.data.reduce((sum, item) => sum + item.totalValuation, 0);
-    const totalUnits = this.data.reduce((sum, item) => sum + item.quantityOnHand, 0);
-    const lowStockCount = this.data.filter(item => item.isLowStock).length;
-    const categories = [...new Set(this.data.map(i => i.category))].filter(Boolean);
+    const totalValuation = (this.data || []).reduce((sum, item) => sum + (item.totalValuation || 0), 0);
+    const totalUnits = (this.data || []).reduce((sum, item) => sum + (item.quantityOnHand || 0), 0);
+    const lowStockCount = (this.data || []).filter(item => item.isLowStock).length;
+
+    // Collect clean unique categories (case-insensitive deduplication, preserved display casing)
+    const catMap = new Map();
+    (this.data || []).forEach(i => {
+      const raw = (i.category || i.Category || '').trim();
+      if (raw) {
+        const lower = raw.toLowerCase();
+        if (!catMap.has(lower)) {
+          catMap.set(lower, raw.charAt(0).toUpperCase() + raw.slice(1));
+        }
+      }
+    });
+    const categories = Array.from(catMap.values()).sort();
     const canEdit = Auth.hasPermission('inventory', 'EDIT');
     const canProcure = Auth.hasPermission('purchases', 'ADD');
 
@@ -115,20 +159,20 @@ const InventoryComponent = {
             <div class="col-12 col-md-5 col-lg-4">
               <div class="input-group input-group-sm">
                 <span class="input-group-text bg-light"><i class="bi bi-search"></i></span>
-                <input type="text" id="inv-search" class="form-control" placeholder="Search by SKU, product name, warehouse location..." oninput="InventoryComponent.filterList()">
+                <input type="text" id="inv-search" class="form-control" placeholder="Search by SKU, product name, warehouse location..." value="${this.searchQuery ? this.searchQuery.replace(/"/g, '&quot;') : ''}" oninput="InventoryComponent.filterList()">
               </div>
             </div>
             <div class="col-12 col-sm-6 col-md-3">
               <select id="inv-cat-filter" class="form-select form-select-sm" onchange="InventoryComponent.filterList()">
-                <option value="">All Categories</option>
-                ${categories.map(c => `<option value="${c}">${c}</option>`).join('')}
+                <option value="" ${!this.selectedCategory ? 'selected' : ''}>All Categories</option>
+                ${categories.map(c => `<option value="${c}" ${this.selectedCategory && this.selectedCategory.toLowerCase() === c.toLowerCase() ? 'selected' : ''}>${c}</option>`).join('')}
               </select>
             </div>
             <div class="col-12 col-sm-6 col-md-2">
               <select id="inv-status-filter" class="form-select form-select-sm" onchange="InventoryComponent.filterList()">
-                <option value="">All Statuses</option>
-                <option value="low">Low Stock Only</option>
-                <option value="good">Adequate Stock</option>
+                <option value="" ${!this.statusFilter ? 'selected' : ''}>All Statuses</option>
+                <option value="low" ${this.statusFilter === 'low' ? 'selected' : ''}>Low Stock Only</option>
+                <option value="good" ${this.statusFilter === 'good' ? 'selected' : ''}>Adequate Stock</option>
               </select>
             </div>
             <div class="col-12 col-sm-auto ms-sm-auto text-muted small text-sm-end mt-2 mt-sm-0">
@@ -171,6 +215,22 @@ const InventoryComponent = {
         </div>
       </div>
     `;
+
+    // Attach explicit event listeners to ensure immediate response across all browsers
+    const searchInput = container.querySelector('#inv-search');
+    const catSelect = container.querySelector('#inv-cat-filter');
+    const statusSelect = container.querySelector('#inv-status-filter');
+
+    if (searchInput) {
+      searchInput.addEventListener('input', () => this.filterList());
+      searchInput.addEventListener('change', () => this.filterList());
+    }
+    if (catSelect) {
+      catSelect.addEventListener('change', () => this.filterList());
+    }
+    if (statusSelect) {
+      statusSelect.addEventListener('change', () => this.filterList());
+    }
   },
 
   buildTableRows(list) {
@@ -180,19 +240,19 @@ const InventoryComponent = {
 
     return list.map(i => `
       <tr>
-        <td class="fw-semibold text-primary font-monospace">${i.sku}</td>
-        <td><div class="fw-semibold text-dark">${i.productName}</div></td>
-        <td><span class="badge bg-light text-dark border">${i.category}</span></td>
+        <td class="fw-semibold text-primary font-monospace">${i.sku || ''}</td>
+        <td><div class="fw-semibold text-dark">${i.productName || ''}</div></td>
+        <td><span class="badge bg-light text-dark border">${i.category || i.Category || 'General'}</span></td>
         <td><i class="bi bi-geo-alt text-muted me-1"></i>${i.location || 'Warehouse'}</td>
-        <td class="fw-bold">${i.quantityOnHand}</td>
-        <td class="text-muted">${i.reservedQuantity}</td>
-        <td class="fw-bold text-success">${i.availableQuantity}</td>
-        <td class="fw-semibold text-dark">${App.formatCurrency(i.totalValuation)}</td>
+        <td class="fw-bold">${i.quantityOnHand ?? 0}</td>
+        <td class="text-muted">${i.reservedQuantity ?? 0}</td>
+        <td class="fw-bold text-success">${i.availableQuantity ?? 0}</td>
+        <td class="fw-semibold text-dark">${App.formatCurrency(i.totalValuation ?? 0)}</td>
         <td>
-          ${i.quantityOnHand <= 0
+          ${(i.quantityOnHand ?? 0) <= 0
             ? '<span class="badge bg-danger">Out of Stock</span>'
             : (i.isLowStock
-              ? `<span class="badge bg-warning text-dark"><i class="bi bi-exclamation-circle me-1"></i>Low (${i.quantityOnHand} &le; ${i.reorderLevel})</span>`
+              ? `<span class="badge bg-warning text-dark"><i class="bi bi-exclamation-circle me-1"></i>Low (${i.quantityOnHand} &le; ${i.reorderLevel ?? 10})</span>`
               : '<span class="badge bg-success-subtle text-success border border-success-subtle"><i class="bi bi-check-circle me-1"></i>Healthy</span>'
             )
           }
@@ -211,6 +271,10 @@ const InventoryComponent = {
   },
 
   updateTableView() {
+    const totalPages = Math.max(1, Math.ceil(this.filteredData.length / this.pageSize));
+    if (this.currentPage > totalPages) {
+      this.currentPage = 1;
+    }
     const start = (this.currentPage - 1) * this.pageSize;
     const pageItems = this.filteredData.slice(start, start + this.pageSize);
     const tbody = document.getElementById('inventory-table-body');
@@ -246,18 +310,16 @@ const InventoryComponent = {
   },
 
   filterList() {
-    const q = (document.getElementById('inv-search')?.value || '').toLowerCase();
-    const cat = document.getElementById('inv-cat-filter')?.value || '';
-    const status = document.getElementById('inv-status-filter')?.value || '';
+    const searchEl = document.getElementById('inv-search');
+    const catEl = document.getElementById('inv-cat-filter');
+    const statusEl = document.getElementById('inv-status-filter');
 
-    this.filteredData = this.data.filter(i => {
-      const matchQ = !q || i.sku.toLowerCase().includes(q) || i.productName.toLowerCase().includes(q) || i.location.toLowerCase().includes(q);
-      const matchCat = !cat || i.category === cat;
-      const matchStatus = !status || (status === 'low' ? i.isLowStock : !i.isLowStock);
-      return matchQ && matchStatus;
-    });
+    this.searchQuery = searchEl ? searchEl.value : '';
+    this.selectedCategory = catEl ? catEl.value : '';
+    this.statusFilter = statusEl ? statusEl.value : '';
 
     this.currentPage = 1;
+    this.applyFilter();
     this.updateTableView();
   },
 
@@ -371,3 +433,5 @@ const InventoryComponent = {
     }
   }
 };
+
+window.InventoryComponent = InventoryComponent;
