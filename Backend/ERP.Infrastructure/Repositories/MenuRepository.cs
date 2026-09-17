@@ -17,6 +17,7 @@ public class MenuRepository : IMenuRepository
     public List<Menu> GetAllMenusWithDetails()
     {
         return _context.Menus
+            .AsSplitQuery()
             .Include(m => m.ParentMenu)
             .Include(m => m.MenuOptions)
             .Include(m => m.RolePermissions)
@@ -27,6 +28,7 @@ public class MenuRepository : IMenuRepository
     public Menu? GetMenuById(int menuId)
     {
         return _context.Menus
+            .AsSplitQuery()
             .Include(m => m.ParentMenu)
             .Include(m => m.MenuOptions)
             .Include(m => m.RolePermissions)

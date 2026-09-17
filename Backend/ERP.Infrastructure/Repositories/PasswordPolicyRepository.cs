@@ -17,7 +17,7 @@ public class PasswordPolicyRepository : IPasswordPolicyRepository
 
     public PasswordPolicy GetPolicy()
     {
-        var policy = _context.PasswordPolicies.FirstOrDefault();
+        var policy = _context.PasswordPolicies.OrderBy(p => p.Id).FirstOrDefault();
         if (policy == null)
         {
             policy = new PasswordPolicy

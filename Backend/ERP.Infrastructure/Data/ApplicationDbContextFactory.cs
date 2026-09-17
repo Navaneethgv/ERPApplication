@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 
@@ -30,7 +30,11 @@ public class ApplicationDbContextFactory : IDesignTimeDbContextFactory<Applicati
             ?? "Host=localhost;Port=5432;Database=erp_db;Username=postgres;Password=9500;Include Error Detail=true";
 
         var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-        optionsBuilder.UseNpgsql(connectionString, b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName));
+        optionsBuilder.UseNpgsql(connectionString, b =>
+        {
+            b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName);
+            b.UseQuerySplittingBehavior(QuerySplittingBehavior.SplitQuery);
+        });
 
         return new ApplicationDbContext(optionsBuilder.Options);
     }

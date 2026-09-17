@@ -2,6 +2,7 @@ using System.Security.Claims;
 using ERP.Application.DTOs;
 using ERP.Application.Interfaces.Services;
 using ERP.Application.Security;
+using ERP.Domain.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,10 +14,12 @@ namespace ERP.API.Controllers;
 public class InvoicesController : ControllerBase
 {
     private readonly IInvoiceService _invoiceService;
+    private readonly IRolePermissionService _rolePermissionService;
 
-    public InvoicesController(IInvoiceService invoiceService)
+    public InvoicesController(IInvoiceService invoiceService, IRolePermissionService rolePermissionService)
     {
         _invoiceService = invoiceService;
+        _rolePermissionService = rolePermissionService;
     }
 
     [HttpGet]
@@ -63,13 +66,17 @@ public class InvoicesController : ControllerBase
     }
 
     [HttpPost("{id}/payments")]
-    [Authorize(Policy = AppPolicies.Invoices.Edit)]
     public IActionResult RecordPayment(int id, [FromBody] RecordPaymentDto dto)
     {
         if (!ModelState.IsValid) return BadRequest(ModelState);
 
-        var role = User.FindFirstValue(ClaimTypes.Role);
-        if (string.Equals(role, "Customer", StringComparison.OrdinalIgnoreCase))
+        var roleStr = User.FindFirstValue(ClaimTypes.Role);
+        if (string.IsNullOrEmpty(roleStr) || !Enum.TryParse<UserRole>(roleStr, true, out var role))
+        {
+            return Forbid();
+        }
+
+        if (role == UserRole.Customer)
         {
             var custIdStr = User.FindFirstValue("CustomerId");
             if (!int.TryParse(custIdStr, out int cId))
@@ -81,6 +88,14 @@ public class InvoicesController : ControllerBase
             if (invoice == null)
             {
                 return NotFound(new { message = $"Invoice with ID {id} not found." });
+            }
+        }
+        else if (role != UserRole.Admin)
+        {
+            // For Employee and other non-Admin roles, enforce dynamic RBAC permission invoices:EDIT
+            if (!_rolePermissionService.HasPermission(role, "invoices", "EDIT"))
+            {
+                return Forbid();
             }
         }
 
